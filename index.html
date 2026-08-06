@@ -2,139 +2,1380 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Cajun & Culture Swamp Tours offers authentic Louisiana swamp tours, local stories, wildlife, and unforgettable Cajun hospitality."
+    >
+
+    <meta name="theme-color" content="#17150f">
 
     <title>Cajun & Culture Swamp Tours</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        :root {
+            --black: #11120e;
+            --black-soft: #191a14;
+            --green-dark: #1f2b1b;
+            --green: #3f5a35;
+            --green-light: #81966f;
+            --cream: #f5eedf;
+            --cream-dark: #ded2bc;
+            --gold: #d3a84d;
+            --gold-light: #f0d48d;
+            --brown: #5c3c25;
+            --white: #fffdf8;
+            --line: rgba(255, 255, 255, 0.14);
+            --shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
         }
 
-        body{
-            font-family:Arial, Helvetica, sans-serif;
-            background:#eef5ef;
-            color:#222;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        header{
-            background:#14532d;
-            color:white;
-            padding:90px 20px;
-            text-align:center;
+        html {
+            scroll-behavior: smooth;
+            background: var(--black);
         }
 
-        header h1{
-            font-size:3rem;
-            margin-bottom:15px;
+        body {
+            min-height: 100vh;
+            font-family: "DM Sans", sans-serif;
+            background: var(--black);
+            color: var(--cream);
+            overflow-x: hidden;
         }
 
-        header p{
-            font-size:1.2rem;
-            max-width:700px;
-            margin:auto;
-            line-height:1.6;
+        img {
+            display: block;
+            width: 100%;
         }
 
-        .button{
-            display:inline-block;
-            margin-top:35px;
-            padding:15px 35px;
-            background:#f4b400;
-            color:#222;
-            text-decoration:none;
-            border-radius:8px;
-            font-weight:bold;
+        a {
+            color: inherit;
         }
 
-        section{
-            max-width:1000px;
-            margin:70px auto;
-            padding:0 20px;
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
         }
 
-        .cards{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:25px;
-            margin-top:35px;
+        .page-shell {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(211, 168, 77, 0.09),
+                    transparent 28rem
+                ),
+                var(--black);
         }
 
-        .card{
-            background:white;
-            padding:30px;
-            border-radius:12px;
-            box-shadow:0 10px 25px rgba(0,0,0,.08);
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(14, 15, 11, 0.88);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--line);
         }
 
-        .card h3{
-            color:#14532d;
-            margin-bottom:15px;
+        .nav {
+            width: min(1220px, calc(100% - 40px));
+            min-height: 92px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
         }
 
-        footer{
-            background:#14532d;
-            color:white;
-            text-align:center;
-            padding:30px;
-            margin-top:70px;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .brand-mark {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--gold-light),
+                    var(--gold)
+                );
+            color: var(--black);
+            font-family: "Playfair Display", serif;
+            font-size: 1.3rem;
+            font-weight: 900;
+            box-shadow: 0 10px 30px rgba(211, 168, 77, 0.2);
+        }
+
+        .brand-copy strong {
+            display: block;
+            font-family: "Playfair Display", serif;
+            font-size: 1.35rem;
+            line-height: 1;
+            color: var(--white);
+        }
+
+        .brand-copy span {
+            display: block;
+            margin-top: 5px;
+            color: var(--cream-dark);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cream-dark);
+            font-size: 0.94rem;
+            font-weight: 700;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 24px;
+            border-radius: 999px;
+            background: var(--cream);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            background: var(--gold-light);
+        }
+
+        .menu-button {
+            display: none;
+            width: 46px;
+            height: 46px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--cream);
+            cursor: pointer;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 900px;
+            display: flex;
+            align-items: center;
+            padding: 170px 0 90px;
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            z-index: -3;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 9, 6, 0.96) 0%,
+                    rgba(8, 9, 6, 0.87) 38%,
+                    rgba(8, 9, 6, 0.48) 68%,
+                    rgba(8, 9, 6, 0.72) 100%
+                ),
+                linear-gradient(
+                    180deg,
+                    rgba(8, 9, 6, 0.12),
+                    rgba(8, 9, 6, 0.96)
+                ),
+                url("swamp-hero.jpg") center / cover no-repeat;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background:
+                radial-gradient(
+                    circle at 76% 28%,
+                    rgba(231, 175, 76, 0.22),
+                    transparent 18rem
+                );
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 220px;
+            z-index: -1;
+            background:
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    var(--black)
+                );
+        }
+
+        .hero-inner {
+            width: min(1220px, calc(100% - 40px));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.12fr 0.88fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 15px;
+            border: 1px solid rgba(240, 212, 141, 0.28);
+            border-radius: 999px;
+            background: rgba(20, 22, 15, 0.72);
+            color: var(--cream);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 18px rgba(211, 168, 77, 0.8);
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin-top: 26px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(4rem, 7.2vw, 7.6rem);
+            line-height: 0.88;
+            letter-spacing: -0.05em;
+            color: var(--white);
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--gold-light);
+        }
+
+        .hero-copy {
+            max-width: 690px;
+            margin-top: 30px;
+            color: var(--cream-dark);
+            font-size: 1.13rem;
+            line-height: 1.75;
+        }
+
+        .hero-actions {
+            margin-top: 34px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .button {
+            min-height: 54px;
+            padding: 0 28px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .button-primary {
+            background: var(--cream);
+            color: var(--black);
+        }
+
+        .button-primary:hover {
+            background: var(--gold-light);
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            color: var(--cream);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .button-secondary:hover {
+            border-color: var(--gold-light);
+            background: rgba(211, 168, 77, 0.1);
+        }
+
+        .hero-contact {
+            margin-top: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            color: var(--cream-dark);
+            font-weight: 700;
+            font-size: 0.94rem;
+        }
+
+        .hero-contact a {
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+        }
+
+        .hero-contact a:hover {
+            color: var(--gold-light);
+        }
+
+        .hero-card {
+            position: relative;
+            max-width: 470px;
+            margin-left: auto;
+            padding: 17px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 30px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(58, 50, 34, 0.94),
+                    rgba(22, 24, 17, 0.96)
+                );
+            box-shadow: var(--shadow);
+            transform: rotate(1.2deg);
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(240, 212, 141, 0.09);
+            border-radius: 22px;
+            pointer-events: none;
+        }
+
+        .hero-card-image {
+            position: relative;
+            height: 390px;
+            overflow: hidden;
+            border-radius: 22px;
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.12),
+                    rgba(0, 0, 0, 0.24)
+                ),
+                url("tour-boat.jpg") center / cover no-repeat;
+        }
+
+        .hero-card-badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            padding: 9px 13px;
+            border-radius: 999px;
+            background: rgba(12, 14, 9, 0.78);
+            backdrop-filter: blur(8px);
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .hero-card-content {
+            padding: 20px 6px 8px;
+        }
+
+        .hero-card-content h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.75rem;
+            color: var(--white);
+        }
+
+        .hero-card-content p {
+            margin-top: 8px;
+            color: var(--cream-dark);
+            line-height: 1.6;
+        }
+
+        .trust-bar {
+            position: relative;
+            z-index: 4;
+            margin-top: -40px;
+        }
+
+        .trust-inner {
+            width: min(1160px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 22px 28px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 22px;
+            background: rgba(27, 28, 21, 0.94);
+            backdrop-filter: blur(16px);
+            box-shadow: var(--shadow);
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .trust-icon {
+            width: 42px;
+            height: 42px;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(211, 168, 77, 0.14);
+            color: var(--gold-light);
+            font-size: 1.1rem;
+        }
+
+        .trust-item strong {
+            display: block;
+            color: var(--white);
+            font-size: 0.92rem;
+        }
+
+        .trust-item span {
+            display: block;
+            margin-top: 3px;
+            color: var(--cream-dark);
+            font-size: 0.78rem;
+        }
+
+        .section {
+            padding: 110px 0;
+        }
+
+        .section-inner {
+            width: min(1160px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .section-label {
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            max-width: 760px;
+            margin-top: 14px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.7rem, 5vw, 5rem);
+            line-height: 1;
+            letter-spacing: -0.035em;
+            color: var(--white);
+        }
+
+        .section-description {
+            max-width: 720px;
+            margin-top: 22px;
+            color: var(--cream-dark);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .experience-grid {
+            margin-top: 54px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .experience-card {
+            position: relative;
+            min-height: 410px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+        }
+
+        .experience-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(10, 11, 8, 0.98),
+                    rgba(10, 11, 8, 0.14) 70%
+                );
+        }
+
+        .experience-card:nth-child(1) {
+            background:
+                url("cypress-trees.jpg") center / cover no-repeat;
+        }
+
+        .experience-card:nth-child(2) {
+            background:
+                url("alligator.jpg") center / cover no-repeat;
+        }
+
+        .experience-card:nth-child(3) {
+            background:
+                url("tour-boat.jpg") center / cover no-repeat;
+        }
+
+        .experience-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-number {
+            color: var(--gold-light);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .experience-content h3 {
+            margin-top: 10px;
+            font-family: "Playfair Display", serif;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .experience-content p {
+            margin-top: 10px;
+            color: var(--cream-dark);
+            line-height: 1.65;
+        }
+
+        .local-section {
+            background:
+                linear-gradient(
+                    rgba(20, 25, 17, 0.94),
+                    rgba(20, 25, 17, 0.98)
+                ),
+                url("swamp-hero.jpg") center / cover fixed;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .local-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .local-photo {
+            position: relative;
+            min-height: 520px;
+            border-radius: 28px;
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.08),
+                    rgba(0, 0, 0, 0.14)
+                ),
+                url("tour-boat.jpg") center / cover no-repeat;
+            box-shadow: var(--shadow);
+        }
+
+        .local-photo::after {
+            content: "South Louisiana";
+            position: absolute;
+            left: 24px;
+            bottom: 24px;
+            padding: 11px 16px;
+            border-radius: 999px;
+            background: rgba(13, 14, 10, 0.8);
+            backdrop-filter: blur(10px);
+            color: var(--cream);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .local-copy h2 {
+            margin-top: 14px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(3rem, 5.4vw, 5.7rem);
+            line-height: 0.98;
+            letter-spacing: -0.04em;
+        }
+
+        .local-copy p {
+            margin-top: 24px;
+            color: var(--cream-dark);
+            line-height: 1.8;
+            font-size: 1.06rem;
+        }
+
+        .local-points {
+            margin-top: 28px;
+            display: grid;
+            gap: 14px;
+        }
+
+        .local-point {
+            display: flex;
+            gap: 13px;
+            align-items: flex-start;
+            color: var(--cream);
+        }
+
+        .local-point-icon {
+            width: 30px;
+            height: 30px;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(211, 168, 77, 0.14);
+            color: var(--gold-light);
+            font-weight: 900;
+        }
+
+        .cta {
+            padding-top: 30px;
+        }
+
+        .cta-box {
+            position: relative;
+            overflow: hidden;
+            padding: 70px;
+            border-radius: 32px;
+            background:
+                linear-gradient(
+                    115deg,
+                    rgba(28, 39, 23, 0.96),
+                    rgba(52, 61, 35, 0.93)
+                ),
+                url("cypress-trees.jpg") center / cover no-repeat;
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            box-shadow: var(--shadow);
+        }
+
+        .cta-box::after {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            right: -160px;
+            top: -180px;
+            border-radius: 50%;
+            background: rgba(211, 168, 77, 0.12);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+        }
+
+        .cta-box h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(3rem, 5vw, 5.2rem);
+            line-height: 0.98;
+            letter-spacing: -0.04em;
+        }
+
+        .cta-box p {
+            max-width: 620px;
+            margin-top: 20px;
+            color: var(--cream-dark);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .site-footer {
+            margin-top: 110px;
+            padding: 54px 0 30px;
+            border-top: 1px solid var(--line);
+            background: #0c0d09;
+        }
+
+        .footer-inner {
+            width: min(1160px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .footer-brand p {
+            max-width: 520px;
+            margin-top: 18px;
+            color: var(--cream-dark);
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px 24px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--cream-dark);
+            font-weight: 700;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            margin-top: 45px;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            border-top: 1px solid var(--line);
+            color: rgba(245, 238, 223, 0.62);
+            font-size: 0.84rem;
+        }
+
+        @media (max-width: 980px) {
+            .nav-links,
+            .nav-button {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav-links.open {
+                position: absolute;
+                top: 92px;
+                left: 20px;
+                right: 20px;
+                display: grid;
+                gap: 0;
+                overflow: hidden;
+                border: 1px solid var(--line);
+                border-radius: 18px;
+                background: rgba(17, 18, 14, 0.98);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.open a {
+                padding: 18px 20px;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 150px;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-card {
+                max-width: 650px;
+                margin: 0;
+                transform: none;
+            }
+
+            .trust-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .local-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .local-photo {
+                min-height: 430px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .nav {
+                width: min(100% - 28px, 1220px);
+                min-height: 78px;
+            }
+
+            .brand-mark {
+                width: 44px;
+                height: 44px;
+            }
+
+            .brand-copy strong {
+                font-size: 1.05rem;
+            }
+
+            .brand-copy span {
+                font-size: 0.58rem;
+            }
+
+            .nav-links.open {
+                top: 78px;
+                left: 14px;
+                right: 14px;
+            }
+
+            .hero {
+                padding: 126px 0 70px;
+            }
+
+            .hero-inner,
+            .section-inner {
+                width: min(100% - 28px, 1160px);
+            }
+
+            .hero h1 {
+                font-size: clamp(3.55rem, 17vw, 5.6rem);
+            }
+
+            .hero-copy {
+                font-size: 1rem;
+            }
+
+            .hero-actions {
+                align-items: stretch;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .hero-card-image {
+                height: 300px;
+            }
+
+            .trust-bar {
+                margin-top: -15px;
+            }
+
+            .trust-inner {
+                width: min(100% - 28px, 1160px);
+                grid-template-columns: 1fr;
+                padding: 22px;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .experience-card {
+                min-height: 350px;
+            }
+
+            .local-photo {
+                min-height: 340px;
+            }
+
+            .cta-box {
+                padding: 42px 24px;
+                border-radius: 24px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
+<div class="page-shell">
 
-    <h1>Cajun & Culture Swamp Tours</h1>
+    <header class="site-header">
 
-    <p>
-        Experience the beauty, wildlife, and rich Cajun heritage of South Louisiana
-        with guided swamp tours you'll never forget.
-    </p>
+        <nav class="nav">
 
-    <a class="button" href="#">Book Your Tour</a>
+            <a class="brand" href="#home">
 
-</header>
+                <div class="brand-mark">
+                    C&C
+                </div>
 
-<section>
+                <div class="brand-copy">
+                    <strong>Cajun & Culture</strong>
+                    <span>Swamp Tours</span>
+                </div>
 
-    <h2>Welcome!</h2>
+            </a>
 
-    <p style="margin-top:20px; line-height:1.8;">
-        This is a test website to verify that your GitHub repository and Cloudflare
-        domain are connected correctly. If you're reading this at your custom domain,
-        congratulations! Everything is working.
-    </p>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#experience">The Experience</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
 
-    <div class="cards">
+            <a class="nav-button" href="#contact">
+                Book a Tour
+            </a>
 
-        <div class="card">
-            <h3>🛶 Swamp Tours</h3>
-            <p>Explore Louisiana's beautiful bayous with experienced local guides.</p>
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-background"></div>
+
+            <div class="hero-inner">
+
+                <div class="hero-copy-area">
+
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        Authentic South Louisiana Adventures
+                    </div>
+
+                    <h1>
+                        Come pass
+                        <span>a good time.</span>
+                    </h1>
+
+                    <p class="hero-copy">
+                        Step off the highway and into the real Louisiana.
+                        Cajun & Culture Swamp Tours brings you through the bayou
+                        with local stories, wildlife, cypress trees, and the kind
+                        of hospitality you can only find down here.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a class="button button-primary" href="#contact">
+                            Book Your Swamp Tour
+                            <span>→</span>
+                        </a>
+
+                        <a class="button button-secondary" href="#experience">
+                            Explore the Experience
+                        </a>
+
+                    </div>
+
+                    <div class="hero-contact">
+                        <span>Locally owned</span>
+                        <span>•</span>
+                        <span>Family friendly</span>
+                        <span>•</span>
+                        <span>Private tours available</span>
+                    </div>
+
+                </div>
+
+                <article class="hero-card">
+
+                    <div class="hero-card-image">
+
+                        <div class="hero-card-badge">
+                            Bayou-born adventure
+                        </div>
+
+                    </div>
+
+                    <div class="hero-card-content">
+
+                        <h2>
+                            More than just a boat ride
+                        </h2>
+
+                        <p>
+                            See the swamp through the eyes of somebody who knows it,
+                            lives it, and is proud to call South Louisiana home.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="trust-bar">
+
+            <div class="trust-inner">
+
+                <div class="trust-item">
+                    <div class="trust-icon">⚜</div>
+                    <div>
+                        <strong>Local Cajun Guides</strong>
+                        <span>Real stories from real locals</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">🐊</div>
+                    <div>
+                        <strong>Louisiana Wildlife</strong>
+                        <span>Gators, birds, turtles and more</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">🛶</div>
+                    <div>
+                        <strong>Small-Group Tours</strong>
+                        <span>Personal, relaxed and memorable</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">📸</div>
+                    <div>
+                        <strong>Great Photo Stops</strong>
+                        <span>Bring home more than memories</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section" id="experience">
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    What you'll experience
+                </div>
+
+                <h2 class="section-title">
+                    The swamp, the stories, and the culture behind it all.
+                </h2>
+
+                <p class="section-description">
+                    This is not a rushed tourist stop. It is a laid-back trip
+                    through one of the most beautiful and unique places in Louisiana,
+                    guided by people who know the water and know the culture.
+                </p>
+
+                <div class="experience-grid">
+
+                    <article class="experience-card">
+
+                        <div class="experience-content">
+                            <div class="experience-number">
+                                01 / The Bayou
+                            </div>
+
+                            <h3>Cypress country</h3>
+
+                            <p>
+                                Cruise through quiet waterways surrounded by moss-covered
+                                cypress trees and classic Louisiana scenery.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="experience-card">
+
+                        <div class="experience-content">
+                            <div class="experience-number">
+                                02 / The Wildlife
+                            </div>
+
+                            <h3>Up close and wild</h3>
+
+                            <p>
+                                Keep your eyes open for alligators, herons, turtles,
+                                egrets, and the many animals that call the swamp home.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="experience-card">
+
+                        <div class="experience-content">
+                            <div class="experience-number">
+                                03 / The People
+                            </div>
+
+                            <h3>Stories worth hearing</h3>
+
+                            <p>
+                                Hear local history, Cajun sayings, family stories,
+                                and a few things you probably will not find in a guidebook.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section local-section" id="about">
+
+            <div class="section-inner local-grid">
+
+                <div class="local-photo"></div>
+
+                <div class="local-copy">
+
+                    <div class="section-label">
+                        Local by nature
+                    </div>
+
+                    <h2>
+                        Proudly Cajun. Proudly Louisiana.
+                    </h2>
+
+                    <p>
+                        Cajun & Culture Swamp Tours was built to show visitors the
+                        Louisiana we know and love. Not a gimmick. Not a staged version.
+                        Just good people, beautiful water, local knowledge, and a real
+                        appreciation for the place we call home.
+                    </p>
+
+                    <div class="local-points">
+
+                        <div class="local-point">
+                            <div class="local-point-icon">✓</div>
+                            <div>
+                                Tours led with local knowledge and personality
+                            </div>
+                        </div>
+
+                        <div class="local-point">
+                            <div class="local-point-icon">✓</div>
+                            <div>
+                                Relaxed atmosphere for families, couples, and groups
+                            </div>
+                        </div>
+
+                        <div class="local-point">
+                            <div class="local-point-icon">✓</div>
+                            <div>
+                                An authentic experience without the tourist-trap feel
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section cta" id="contact">
+
+            <div class="section-inner">
+
+                <div class="cta-box">
+
+                    <div class="cta-content">
+
+                        <div class="section-label">
+                            Ready to hit the water?
+                        </div>
+
+                        <h2>
+                            Book your Louisiana swamp adventure.
+                        </h2>
+
+                        <p>
+                            Bring your family, your friends, and your camera.
+                            We will take care of the rest.
+                        </p>
+
+                        <div class="hero-actions">
+
+                            <a class="button button-primary" href="tel:12255555555">
+                                Call to Book
+                            </a>
+
+                            <a class="button button-secondary" href="sms:12255555555">
+                                Text Us
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+
+                    <a class="brand" href="#home">
+
+                        <div class="brand-mark">
+                            C&C
+                        </div>
+
+                        <div class="brand-copy">
+                            <strong>Cajun & Culture</strong>
+                            <span>Swamp Tours</span>
+                        </div>
+
+                    </a>
+
+                    <p>
+                        Authentic Louisiana swamp tours featuring local wildlife,
+                        Cajun culture, and good old-fashioned South Louisiana hospitality.
+                    </p>
+
+                </div>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#experience">The Experience</a>
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Book a Tour</a>
+                    <a href="tel:12255555555">Call</a>
+                    <a href="mailto:hello@cajunandculture.com">Email</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Cajun & Culture Swamp Tours
+                </span>
+
+                <span>
+                    Made with pride in South Louisiana
+                </span>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>🐊 Wildlife</h3>
-            <p>See alligators, birds, turtles, and native wildlife in their natural habitat.</p>
-        </div>
+    </footer>
 
-        <div class="card">
-            <h3>🎶 Cajun Culture</h3>
-            <p>Learn about the history, traditions, and culture that make Louisiana unique.</p>
-        </div>
+</div>
 
-    </div>
+<script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
 
-</section>
+    menuButton.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("open");
 
-<footer>
+        menuButton.setAttribute("aria-expanded", isOpen);
+        menuButton.textContent = isOpen ? "✕" : "☰";
+    });
 
-    © 2026 Cajun & Culture Swamp Tours
-
-</footer>
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.textContent = "☰";
+        });
+    });
+</script>
 
 </body>
 </html>
