@@ -3,36 +3,520 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cajun & Culture Swamp Tours. Family swamp tours in South Louisiana with local guides, bayou wildlife, and Cajun stories.">
+<meta name="theme-color" content="#1d2e21">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>Cajun &amp; Culture Swamp Tours | South Louisiana</title>
 
-    <meta
-        name="description"
-        content="Experience the real South Louisiana bayou with Cajun & Culture Swamp Tours. Local guides, Louisiana wildlife, Cajun stories, and unforgettable swamp adventures."
-    >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-    <meta name="theme-color" content="#cbd8cc">
+<style>
 
-    <title>Cajun & Culture Swamp Tours</title>
+/* ============================================================
+   CAJUN & CULTURE SWAMP TOURS
+   All the styling lives right here in this file.
+   Colors are set once below, so you can change the whole
+   look of the site by editing these few lines.
+   ============================================================ */
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+:root {
+    --paper:      #f3ead6;   /* aged paper background        */
+    --paper-dark: #e6d9bd;   /* slightly darker paper        */
+    --cypress:    #1d2e21;   /* deep swamp green             */
+    --cypress-lt: #2f4634;   /* lighter green                */
+    --brick:      #a8412a;   /* sign-painter red             */
+    --gold:       #d9a326;   /* mustard gold                 */
+    --ink:        #2b241a;   /* body text                    */
+    --ink-soft:   #5c5142;   /* quieter text                 */
+}
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+* { box-sizing: border-box; }
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap"
-        rel="stylesheet"
-    >
+html { scroll-behavior: smooth; }
 
-    <link rel="stylesheet" href="style.css">
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Libre Franklin", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+a { color: var(--brick); }
+
+h1, h2, h3, .sign-name {
+    font-family: "Alfa Slab One", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    margin: 0;
+}
+
+/* Page width */
+.wrap {
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+.narrow { max-width: 680px; }   /* keeps paragraphs easy to read */
+
+
+/* ------------------------------------------------------------
+   TOP BAR
+   ------------------------------------------------------------ */
+
+.topbar {
+    background: var(--cypress);
+    color: var(--paper);
+    border-bottom: 5px solid var(--gold);
+}
+
+.topbar .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.logo {
+    display: block;
+    color: var(--paper);
+    text-decoration: none;
+}
+
+.logo .sign-name {
+    font-size: 26px;
+    color: var(--gold);
+}
+
+.logo .sub {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: #c8d3c4;
+    margin-top: 4px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: var(--paper);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.menu a:hover,
+.menu a:focus-visible { border-bottom-color: var(--gold); }
+
+
+/* ------------------------------------------------------------
+   BUTTONS
+   ------------------------------------------------------------ */
+
+.btn {
+    display: inline-block;
+    background: var(--brick);
+    color: #fff5e4;
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 15px 30px;
+    border: 3px solid var(--ink);
+    border-radius: 3px;
+    box-shadow: 4px 4px 0 var(--ink);
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background: #8f3523;
+    box-shadow: 2px 2px 0 var(--ink);
+    transform: translate(2px, 2px);
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--ink);
+}
+
+.btn-gold:hover,
+.btn-gold:focus-visible { background: #c4911c; }
+
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+
+/* ------------------------------------------------------------
+   HERO — photo with a painted sign sitting on it
+   ------------------------------------------------------------ */
+
+.hero {
+    position: relative;
+    background: var(--cypress) url("bayou-wide.jpg") center / cover no-repeat;
+    padding: 90px 0 100px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 30, 21, 0.55);
+}
+
+.hero .wrap { position: relative; }
+
+.sign {
+    max-width: 640px;
+    background: var(--paper);
+    border: 4px solid var(--ink);
+    border-radius: 4px;
+    box-shadow: 10px 10px 0 rgba(20, 30, 22, 0.55);
+    padding: 40px 38px 42px;
+}
+
+.sign h1 {
+    font-size: clamp(34px, 6vw, 56px);
+    color: var(--cypress);
+}
+
+.sign .rule {
+    width: 90px;
+    height: 6px;
+    background: var(--gold);
+    margin: 22px 0;
+}
+
+.sign p {
+    margin: 0 0 28px;
+    font-size: 19px;
+    color: var(--ink-soft);
+}
+
+.hero-note {
+    margin-top: 26px;
+    color: var(--paper);
+    font-size: 17px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+/* ------------------------------------------------------------
+   SECTIONS
+   ------------------------------------------------------------ */
+
+section { padding: 74px 0; }
+
+.title {
+    font-size: clamp(28px, 4.4vw, 40px);
+    color: var(--cypress);
+    margin-bottom: 14px;
+}
+
+.lead {
+    font-size: 19px;
+    color: var(--ink-soft);
+    margin: 0 0 40px;
+}
+
+.on-green {
+    background: var(--cypress);
+    color: #e9e2d0;
+}
+
+.on-green .title { color: var(--gold); }
+.on-green .lead  { color: #c3cfc0; }
+
+.band {
+    background: var(--gold);
+    height: 12px;
+}
+
+
+/* Two-up photo and text rows */
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 44px;
+    align-items: center;
+    margin-bottom: 58px;
+}
+
+.row:last-child { margin-bottom: 0; }
+
+.row.flip .photo { order: 2; }
+
+.photo {
+    height: 330px;
+    border: 4px solid var(--ink);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--cypress-lt);
+}
+
+.row h3 {
+    font-size: 26px;
+    color: var(--brick);
+    margin-bottom: 12px;
+}
+
+.row p { margin: 0; color: var(--ink-soft); }
+
+
+/* ------------------------------------------------------------
+   TOURS
+   ------------------------------------------------------------ */
+
+.tours {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.tour {
+    background: var(--paper);
+    border: 4px solid var(--ink);
+    border-radius: 3px;
+    padding: 34px 30px;
+}
+
+.tour h3 {
+    font-size: 27px;
+    color: var(--cypress);
+    margin-bottom: 14px;
+}
+
+.tour p { margin: 0 0 20px; color: var(--ink-soft); }
+
+.tour ul {
+    list-style: none;
+    margin: 0 0 26px;
+    padding: 0;
+}
+
+.tour li {
+    padding: 9px 0 9px 26px;
+    border-top: 1px solid var(--paper-dark);
+    position: relative;
+}
+
+.tour li::before {
+    content: "\2748";           /* little fleur-ish mark */
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
+
+/* ------------------------------------------------------------
+   GALLERY
+   ------------------------------------------------------------ */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.gallery div {
+    height: 240px;
+    border: 4px solid var(--ink);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--cypress-lt);
+}
+
+.gallery div:first-child { grid-column: span 2; }
+
+
+/* ------------------------------------------------------------
+   GOOD TO KNOW
+   ------------------------------------------------------------ */
+
+.know {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.know li {
+    border-top: 2px solid var(--cypress-lt);
+    padding: 16px 0;
+}
+
+.know strong {
+    display: block;
+    font-size: 19px;
+    color: var(--gold);
+    margin-bottom: 4px;
+}
+
+
+/* ------------------------------------------------------------
+   QUESTIONS (native open/close, no scripts needed)
+   ------------------------------------------------------------ */
+
+details {
+    border-bottom: 2px solid var(--paper-dark);
+    padding: 6px 0;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 16px 40px 16px 0;
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--cypress);
+    position: relative;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+    content: "+";
+    position: absolute;
+    right: 6px;
+    top: 12px;
+    font-size: 26px;
+    color: var(--brick);
+    line-height: 1;
+}
+
+details[open] summary::after { content: "\2013"; }
+
+details p {
+    margin: 0 0 18px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+}
+
+
+/* ------------------------------------------------------------
+   CLOSING CALL AND FOOTER
+   ------------------------------------------------------------ */
+
+.closing {
+    background: var(--brick);
+    color: #fff3df;
+    text-align: center;
+}
+
+.closing h2 {
+    font-size: clamp(30px, 5vw, 44px);
+    margin-bottom: 18px;
+}
+
+.closing p {
+    font-size: 20px;
+    max-width: 30em;
+    margin: 0 auto 32px;
+}
+
+footer {
+    background: var(--cypress);
+    color: #bfcbbd;
+    padding: 54px 0 30px;
+    font-size: 16px;
+}
+
+.foot-cols {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 36px;
+    margin-bottom: 38px;
+}
+
+footer h3 {
+    font-size: 18px;
+    color: var(--gold);
+    margin-bottom: 14px;
+}
+
+footer a {
+    display: block;
+    color: #e2dbca;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+footer a:hover,
+footer a:focus-visible { color: #fff; text-decoration: underline; }
+
+.foot-bottom {
+    border-top: 1px solid var(--cypress-lt);
+    padding-top: 22px;
+    font-size: 15px;
+    color: #94a293;
+}
+
+
+/* ------------------------------------------------------------
+   PHONES AND TABLETS
+   ------------------------------------------------------------ */
+
+@media (max-width: 860px) {
+
+    body { font-size: 17px; }
+
+    .topbar .wrap { justify-content: flex-start; }
+
+    .menu { gap: 16px; }
+
+    .hero { padding: 56px 0 64px; }
+
+    .sign { padding: 30px 24px 32px; }
+
+    section { padding: 54px 0; }
+
+    .row,
+    .tours,
+    .know {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .row { margin-bottom: 42px; }
+
+    .row.flip .photo { order: 0; }
+
+    .photo { height: 250px; }
+
+    .gallery { grid-template-columns: 1fr 1fr; }
+
+    .gallery div { height: 175px; }
+
+    .gallery div:first-child { grid-column: span 2; }
+
+    .foot-cols { grid-template-columns: 1fr; gap: 26px; }
+}
+
+</style>
 
 </head>
 
@@ -40,2232 +524,458 @@
 <body>
 
 
-    <!-- ============================= -->
-    <!-- PAGE LOADER -->
-    <!-- ============================= -->
+<!-- ===================== TOP BAR ===================== -->
 
-    <div
-        class="page-loader"
-        id="pageLoader"
-    >
+<header class="topbar">
 
-        <div class="loader-mark">
-            C&C
+    <div class="wrap">
+
+        <a class="logo" href="index.html">
+            <span class="sign-name">Cajun &amp; Culture</span>
+            <span class="sub">Swamp Tours</span>
+        </a>
+
+        <nav class="menu" aria-label="Main">
+            <a href="#bayou">The Bayou</a>
+            <a href="#tours">Tours</a>
+            <a href="#gallery">Pictures</a>
+            <a href="#guide">Your Guide</a>
+            <a href="#questions">Questions</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- ===================== HERO ===================== -->
+
+<section class="hero" id="top">
+
+    <div class="wrap">
+
+        <div class="sign">
+
+            <h1>Come see the swamp with folks who grew up on it.</h1>
+
+            <div class="rule"></div>
+
+            <p>
+                Cypress trees, gators sunning on the bank, birds you
+                won't see anywhere else, and stories that have been
+                handed down around here for generations.
+            </p>
+
+            <a class="btn" href="contact.html">Book a tour</a>
+
+        </div>
+
+        <p class="hero-note">
+            Family tours and private trips out of South Louisiana.
+        </p>
+
+    </div>
+
+</section>
+
+<div class="band"></div>
+
+
+<!-- ===================== THE BAYOU ===================== -->
+
+<section id="bayou">
+
+    <div class="wrap">
+
+        <div class="narrow">
+            <h2 class="title">There's a whole other Louisiana out past the road.</h2>
+            <p class="lead">
+                The water moves slow out here. Moss hangs off the
+                cypress, something rustles in the grass, and the
+                only thing on a schedule is you. Here's what a
+                trip with us looks like.
+            </p>
+        </div>
+
+        <div class="row">
+
+            <div class="photo">
+                <img src="sunset-swamp.jpg" alt="Cypress trees and still water in the Louisiana swamp" loading="lazy">
+            </div>
+
+            <div>
+                <h3>Cypress and still water</h3>
+                <p>
+                    We take the narrow waterways where the trees close
+                    in overhead and the water goes flat as glass. It's
+                    the part of the state the highway never shows you.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row flip">
+
+            <div class="photo">
+                <img src="alligator.jpg" alt="Alligator resting in the water" loading="lazy">
+            </div>
+
+            <div>
+                <h3>Gators, herons, and whatever else turns up</h3>
+                <p>
+                    Alligators, egrets, herons, turtles, snakes sunning
+                    on a log. Wild animals don't keep appointments, but
+                    we know where they like to be.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="photo">
+                <img src="guests-on-boat.jpg" alt="Guests on the boat during a swamp tour" loading="lazy">
+            </div>
+
+            <div>
+                <h3>Stories along the way</h3>
+                <p>
+                    Family history, how people made a living out here,
+                    a few jokes, and answers to whatever you feel like
+                    asking. No script, no recording.
+                </p>
+            </div>
+
         </div>
 
     </div>
 
+</section>
 
 
-    <!-- ============================= -->
-    <!-- HEADER -->
-    <!-- ============================= -->
+<!-- ===================== TOURS ===================== -->
 
-    <header
-        class="site-header"
-        id="siteHeader"
-    >
+<section class="on-green" id="tours">
 
-        <div class="nav-wrap">
+    <div class="wrap">
 
-
-            <!-- BRAND -->
-
-            <a
-                class="brand"
-                href="#home"
-                aria-label="Cajun and Culture home"
-            >
-
-                <div class="brand-mark">
-                    C&C
-                </div>
-
-                <div class="brand-copy">
-
-                    <strong>
-                        Cajun & Culture
-                    </strong>
-
-                    <span>
-                        Swamp Tours
-                    </span>
-
-                </div>
-
-            </a>
-
-
-
-            <!-- DESKTOP NAV -->
-
-            <nav
-                class="desktop-nav"
-                aria-label="Main navigation"
-            >
-
-                <a href="#experience">
-                    Experience
-                </a>
-
-                <a href="#tours">
-                    Tours
-                </a>
-
-                <a href="#gallery">
-                    Gallery
-                </a>
-
-                <a href="#guide">
-                    Meet Your Guide
-                </a>
-
-                <a href="#faq">
-                    FAQ
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </nav>
-
-
-
-            <!-- DESKTOP CONTACT BUTTON -->
-
-            <a
-                class="nav-book-button"
-                href="contact.html"
-            >
-                Book Your Tour
-            </a>
-
-
-
-            <!-- MOBILE MENU BUTTON -->
-
-            <button
-                class="menu-button"
-                id="menuButton"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="mobileMenu"
-            >
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
+        <div class="narrow">
+            <h2 class="title">Two ways to get out on the water</h2>
+            <p class="lead">
+                Give us a holler about times and openings and we'll
+                get you squared away.
+            </p>
         </div>
 
+        <div class="tours">
 
+            <article class="tour">
 
-        <!-- MOBILE MENU -->
-
-        <div
-            class="mobile-menu"
-            id="mobileMenu"
-        >
-
-            <a href="#experience">
-                Experience
-            </a>
-
-            <a href="#tours">
-                Tours
-            </a>
-
-            <a href="#gallery">
-                Gallery
-            </a>
-
-            <a href="#guide">
-                Meet Your Guide
-            </a>
-
-            <a href="#faq">
-                FAQ
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a
-                class="mobile-book-button"
-                href="contact.html"
-            >
-                Book Your Tour
-            </a>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- ============================= -->
-    <!-- MAIN -->
-    <!-- ============================= -->
-
-    <main>
-
-
-
-        <!-- ============================= -->
-        <!-- HERO -->
-        <!-- ============================= -->
-
-        <section
-            class="hero"
-            id="home"
-        >
-
-            <div
-                class="hero-background"
-                aria-hidden="true"
-            ></div>
-
-            <div
-                class="hero-shade"
-                aria-hidden="true"
-            ></div>
-
-            <div
-                class="hero-water-glow"
-                aria-hidden="true"
-            ></div>
-
-
-
-            <div class="hero-inner">
-
-
-                <!-- HERO TEXT -->
-
-                <div class="hero-content">
-
-
-                    <div class="hero-eyebrow reveal">
-
-                        <span class="eyebrow-line"></span>
-
-                        Authentic South Louisiana Swamp Tours
-
-                    </div>
-
-
-
-                    <h1 class="hero-title reveal">
-
-                        See the bayou.
-
-                        <span>
-                            Feel the culture.
-                        </span>
-
-                    </h1>
-
-
-
-                    <p class="hero-description reveal">
-
-                        Cruise through cypress-lined waterways,
-                        spot Louisiana wildlife, hear stories
-                        passed down through generations, and
-                        experience the swamp with people who are
-                        proud to call this place home.
-
-                    </p>
-
-
-
-                    <div class="hero-actions reveal">
-
-
-                        <a
-                            class="button button-primary"
-                            href="contact.html"
-                        >
-
-                            Book Your Tour
-
-                            <span aria-hidden="true">
-                                →
-                            </span>
-
-                        </a>
-
-
-                        <a
-                            class="button button-ghost"
-                            href="#experience"
-                        >
-                            Explore the Experience
-                        </a>
-
-
-                    </div>
-
-
-
-                    <!-- HERO DETAILS -->
-
-                    <div class="hero-details reveal">
-
-
-                        <div class="hero-detail">
-
-                            <span class="hero-detail-icon">
-                                ⚜
-                            </span>
-
-                            <div>
-
-                                <strong>
-                                    Locally Guided
-                                </strong>
-
-                                <small>
-                                    Real stories. Real Louisiana.
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="hero-detail">
-
-                            <span class="hero-detail-icon">
-                                ◎
-                            </span>
-
-                            <div>
-
-                                <strong>
-                                    Family Friendly
-                                </strong>
-
-                                <small>
-                                    A bayou experience for the whole crew.
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="hero-detail">
-
-                            <span class="hero-detail-icon">
-                                ⌁
-                            </span>
-
-                            <div>
-
-                                <strong>
-                                    Private Tours
-                                </strong>
-
-                                <small>
-                                    Ask us about private experiences.
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- HERO PHOTO CARD -->
-
-                <aside class="hero-booking-card reveal">
-
-
-                    <div class="hero-card-photo">
-
-                        <span class="photo-label">
-                            Welcome to the bayou
-                        </span>
-
-                    </div>
-
-
-
-                    <div class="hero-card-body">
-
-
-                        <span class="card-kicker">
-                            Your Louisiana adventure
-                        </span>
-
-
-                        <h2>
-                            Come pass a good time.
-                        </h2>
-
-
-                        <p>
-
-                            Beautiful scenery, local wildlife,
-                            Cajun stories, and plenty of personality
-                            along the way.
-
-                        </p>
-
-
-                        <a href="contact.html">
-
-                            Contact Us About a Tour
-
-                            <span aria-hidden="true">
-                                ↗
-                            </span>
-
-                        </a>
-
-
-                    </div>
-
-                </aside>
-
-
-            </div>
-
-
-
-            <!-- SCROLL PROMPT -->
-
-            <a
-                class="scroll-prompt"
-                href="#experience"
-                aria-label="Scroll to experience section"
-            >
-
-                <span>
-                    Discover the bayou
-                </span>
-
-                <i></i>
-
-            </a>
-
-
-        </section>
-
-
-
-        <!-- ============================= -->
-        <!-- QUICK HIGHLIGHTS -->
-        <!-- ============================= -->
-
-        <section
-            class="floating-facts"
-            aria-label="Tour highlights"
-        >
-
-            <div class="floating-facts-inner">
-
-
-                <div class="fact-item">
-
-                    <span class="fact-number">
-                        01
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Local Cajun Guides
-                        </strong>
-
-                        <p>
-                            Experience the swamp with people who know it.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="fact-item">
-
-                    <span class="fact-number">
-                        02
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Louisiana Wildlife
-                        </strong>
-
-                        <p>
-                            Alligators, birds, turtles, and more.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="fact-item">
-
-                    <span class="fact-number">
-                        03
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Small-Group Feel
-                        </strong>
-
-                        <p>
-                            Relaxed, personal, and never rushed.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="fact-item">
-
-                    <span class="fact-number">
-                        04
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Unforgettable Views
-                        </strong>
-
-                        <p>
-                            Bring your camera and enjoy the ride.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ============================= -->
-        <!-- EXPERIENCE -->
-        <!-- ============================= -->
-
-        <section
-            class="section intro-section"
-            id="experience"
-        >
-
-            <div class="section-shell">
-
-
-                <div class="intro-heading reveal">
-
-
-                    <div>
-
-                        <span class="section-kicker">
-                            More than a boat ride
-                        </span>
-
-
-                        <h2>
-                            Step into the Louisiana locals know.
-                        </h2>
-
-                    </div>
-
-
-
-                    <p>
-
-                        The bayou has its own rhythm. Slow water,
-                        moss-covered cypress trees, wildlife around
-                        every bend, and stories that belong to the
-                        people who grew up here.
-
-                        Cajun & Culture brings all of it together
-                        in one unforgettable experience.
-
-                    </p>
-
-
-                </div>
-
-
-
-                <div class="experience-grid">
-
-
-                    <!-- SCENERY -->
-
-                    <article
-                        class="experience-card experience-card-large reveal"
-                    >
-
-                        <div
-                            class="experience-image experience-image-cypress"
-                        ></div>
-
-
-                        <div class="experience-card-content">
-
-
-                            <span class="experience-number">
-                                01
-                            </span>
-
-
-                            <div>
-
-
-                                <span class="mini-kicker">
-                                    The scenery
-                                </span>
-
-
-                                <h3>
-                                    Cypress country
-                                </h3>
-
-
-                                <p>
-
-                                    Drift beneath Spanish moss and
-                                    through quiet waterways surrounded
-                                    by classic South Louisiana scenery.
-
-                                </p>
-
-
-                            </div>
-
-
-                        </div>
-
-
-                    </article>
-
-
-
-                    <!-- WILDLIFE -->
-
-                    <article class="experience-card reveal">
-
-
-                        <div
-                            class="experience-image experience-image-wildlife"
-                        ></div>
-
-
-                        <div class="experience-card-content">
-
-
-                            <span class="experience-number">
-                                02
-                            </span>
-
-
-                            <div>
-
-
-                                <span class="mini-kicker">
-                                    The wildlife
-                                </span>
-
-
-                                <h3>
-                                    Wild and up close
-                                </h3>
-
-
-                                <p>
-
-                                    Keep your eyes open for alligators,
-                                    herons, egrets, turtles, and the
-                                    other wildlife that calls the bayou home.
-
-                                </p>
-
-
-                            </div>
-
-
-                        </div>
-
-
-                    </article>
-
-
-
-                    <!-- CULTURE -->
-
-                    <article class="experience-card reveal">
-
-
-                        <div
-                            class="experience-image experience-image-people"
-                        ></div>
-
-
-                        <div class="experience-card-content">
-
-
-                            <span class="experience-number">
-                                03
-                            </span>
-
-
-                            <div>
-
-
-                                <span class="mini-kicker">
-                                    The culture
-                                </span>
-
-
-                                <h3>
-                                    Stories worth hearing
-                                </h3>
-
-
-                                <p>
-
-                                    Learn about local history,
-                                    traditions, families, and the culture
-                                    that helped shape South Louisiana.
-
-                                </p>
-
-
-                            </div>
-
-
-                        </div>
-
-
-                    </article>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ============================= -->
-        <!-- LARGE BAYOU BANNER -->
-        <!-- ============================= -->
-
-        <section class="section story-banner">
-
-
-            <div class="story-banner-background"></div>
-
-
-            <div class="section-shell story-banner-inner">
-
-
-                <div class="story-banner-copy reveal">
-
-
-                    <span class="section-kicker light">
-                        Proudly South Louisiana
-                    </span>
-
-
-                    <h2>
-                        See a side of Louisiana you can't see from the highway.
-                    </h2>
-
-
-                    <p>
-
-                        Slow down, get out on the water, and experience
-                        the scenery, wildlife, stories, and culture that
-                        make the Louisiana bayou unlike anywhere else.
-
-                    </p>
-
-
-                    <a
-                        class="text-link light"
-                        href="contact.html"
-                    >
-
-                        Plan Your Tour
-
-                        <span aria-hidden="true">
-                            →
-                        </span>
-
-                    </a>
-
-
-                </div>
-
-
-
-                <div class="story-quote reveal">
-
-
-                    <span class="quote-mark">
-                        “
-                    </span>
-
-
-                    <blockquote>
-
-                        Come see the Louisiana bayou the way
-                        it was meant to be seen: from the water.
-
-                    </blockquote>
-
-
-                    <span class="quote-caption">
-                        Cajun & Culture Swamp Tours
-                    </span>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ============================= -->
-        <!-- TOURS -->
-        <!-- ============================= -->
-
-        <section
-            class="section tours-section"
-            id="tours"
-        >
-
-
-            <div class="section-shell">
-
-
-                <div class="section-heading centered reveal">
-
-
-                    <span class="section-kicker">
-                        Choose your adventure
-                    </span>
-
-
-                    <h2>
-                        Find the tour that fits your crew.
-                    </h2>
-
-
-                    <p>
-
-                        Whether you're looking for the classic
-                        swamp experience or something more private,
-                        we'll help you plan the right trip.
-
-                    </p>
-
-
-                </div>
-
-
-
-                <div class="tour-card-grid">
-
-
-                    <!-- STANDARD TOUR -->
-
-                    <article class="tour-option reveal">
-
-
-                        <div
-                            class="tour-option-image tour-option-standard"
-                        >
-
-                            <span class="tour-badge">
-                                Classic experience
-                            </span>
-
-                        </div>
-
-
-
-                        <div class="tour-option-body">
-
-
-                            <div class="tour-option-heading">
-
-
-                                <div>
-
-                                    <span class="mini-kicker">
-                                        Explore the bayou
-                                    </span>
-
-                                    <h3>
-                                        Swamp Tour
-                                    </h3>
-
-                                </div>
-
-
-                            </div>
-
-
-
-                            <p>
-
-                                Cruise through cypress-lined waterways
-                                while experiencing Louisiana wildlife,
-                                local history, and Cajun culture.
-
-                            </p>
-
-
-
-                            <ul class="tour-features">
-
-                                <li>
-                                    Family-friendly experience
-                                </li>
-
-                                <li>
-                                    Louisiana wildlife
-                                </li>
-
-                                <li>
-                                    Local history and culture
-                                </li>
-
-                                <li>
-                                    Plenty of photo opportunities
-                                </li>
-
-                            </ul>
-
-
-
-                            <div class="tour-option-footer">
-
-
-                                <span>
-                                    Contact us for tour details
-                                </span>
-
-
-                                <a href="contact.html">
-
-                                    Contact Us
-
-                                    <span aria-hidden="true">
-                                        →
-                                    </span>
-
-                                </a>
-
-
-                            </div>
-
-
-                        </div>
-
-
-                    </article>
-
-
-
-                    <!-- PRIVATE TOUR -->
-
-                    <article
-                        class="tour-option featured reveal"
-                    >
-
-
-                        <div
-                            class="tour-option-image tour-option-private"
-                        >
-
-                            <span class="tour-badge">
-                                Private adventure
-                            </span>
-
-                        </div>
-
-
-
-                        <div class="tour-option-body">
-
-
-                            <div class="tour-option-heading">
-
-
-                                <div>
-
-                                    <span class="mini-kicker">
-                                        Your boat. Your crew.
-                                    </span>
-
-                                    <h3>
-                                        Private Swamp Tour
-                                    </h3>
-
-                                </div>
-
-
-                            </div>
-
-
-
-                            <p>
-
-                                Looking for something more personal?
-                                Ask about a private swamp experience
-                                for your family, group, celebration,
-                                or special occasion.
-
-                            </p>
-
-
-
-                            <ul class="tour-features">
-
-                                <li>
-                                    Private experience
-                                </li>
-
-                                <li>
-                                    Great for families and groups
-                                </li>
-
-                                <li>
-                                    More personal atmosphere
-                                </li>
-
-                                <li>
-                                    Contact us for availability
-                                </li>
-
-                            </ul>
-
-
-
-                            <div class="tour-option-footer">
-
-
-                                <span>
-                                    Contact us for details
-                                </span>
-
-
-                                <a href="contact.html">
-
-                                    Ask About Private Tours
-
-                                    <span aria-hidden="true">
-                                        →
-                                    </span>
-
-                                </a>
-
-
-                            </div>
-
-
-                        </div>
-
-
-                    </article>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ============================= -->
-        <!-- GALLERY -->
-        <!-- ============================= -->
-
-        <section
-            class="section gallery-section"
-            id="gallery"
-        >
-
-
-            <div class="section-shell">
-
-
-                <div class="gallery-heading reveal">
-
-
-                    <div>
-
-
-                        <span class="section-kicker">
-                            A look around
-                        </span>
-
-
-                        <h2>
-                            Life on the bayou.
-                        </h2>
-
-
-                    </div>
-
-
-
-                    <p>
-
-                        Every trip on the water is different.
-                        The light changes, the wildlife moves,
-                        and the swamp always has something new
-                        to show you.
-
-                    </p>
-
-
-                </div>
-
-
-
-                <div class="gallery-grid">
-
-
-                    <button
-                        class="gallery-item gallery-item-wide reveal"
-                        type="button"
-                        data-image="bayou-wide.jpg"
-                        aria-label="View wide bayou photo"
-                    >
-
-                        <img
-                            src="bayou-wide.jpg"
-                            alt="Wide Louisiana bayou scene"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Open water
-                        </span>
-
-                    </button>
-
-
-
-                    <button
-                        class="gallery-item reveal"
-                        type="button"
-                        data-image="alligator.jpg"
-                        aria-label="View alligator photo"
-                    >
-
-                        <img
-                            src="alligator.jpg"
-                            alt="Alligator in the Louisiana swamp"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Wildlife
-                        </span>
-
-                    </button>
-
-
-
-                    <button
-                        class="gallery-item reveal"
-                        type="button"
-                        data-image="guests-on-boat.jpg"
-                        aria-label="View guests on boat photo"
-                    >
-
-                        <img
-                            src="guests-on-boat.jpg"
-                            alt="Guests enjoying a swamp tour"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Good times
-                        </span>
-
-                    </button>
-
-
-
-                    <button
-                        class="gallery-item reveal"
-                        type="button"
-                        data-image="wildlife-bird.jpg"
-                        aria-label="View Louisiana bird photo"
-                    >
-
-                        <img
-                            src="wildlife-bird.jpg"
-                            alt="Louisiana bird near the water"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Bayou birds
-                        </span>
-
-                    </button>
-
-
-
-                    <button
-                        class="gallery-item gallery-item-tall reveal"
-                        type="button"
-                        data-image="sunset-swamp.jpg"
-                        aria-label="View swamp sunset photo"
-                    >
-
-                        <img
-                            src="sunset-swamp.jpg"
-                            alt="Sunset over the Louisiana swamp"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            Golden hour
-                        </span>
-
-                    </button>
-
-
-
-                    <button
-                        class="gallery-item reveal"
-                        type="button"
-                        data-image="dock.jpg"
-                        aria-label="View swamp tour dock photo"
-                    >
-
-                        <img
-                            src="dock.jpg"
-                            alt="Boat dock at the swamp tour location"
-                            loading="lazy"
-                        >
-
-                        <span>
-                            The starting point
-                        </span>
-
-                    </button>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ============================= -->
-        <!-- GUIDE -->
-        <!-- ============================= -->
-
-        <section
-            class="section guide-section"
-            id="guide"
-        >
-
-
-            <div class="section-shell guide-grid">
-
-
-                <div class="guide-photo-wrap reveal">
-
-
-                    <div class="guide-photo">
-
-                        <img
-                            src="guide.jpg"
-                            alt="Local guide from Cajun and Culture Swamp Tours"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-
-                    <div class="guide-photo-tag">
-
-                        <span>
-                            Local knowledge
-                        </span>
-
-                        <strong>
-                            Louisiana through and through
-                        </strong>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="guide-copy reveal">
-
-
-                    <span class="section-kicker">
-                        Meet your guide
-                    </span>
-
-
-                    <h2>
-                        The best stories come from the people who lived them.
-                    </h2>
-
-
-                    <p>
-
-                        Cajun & Culture isn't about reading a script
-                        while driving a boat. It's about sharing the
-                        swamp, stories, history, and culture of
-                        South Louisiana with the people who come to visit.
-
-                    </p>
-
-
-                    <p>
-
-                        Your tour is meant to feel less like a tourist
-                        attraction and more like spending time on the
-                        bayou with somebody who knows and loves the area.
-
-                    </p>
-
-
-
-                    <div class="guide-values">
-
-
-                        <div class="guide-value">
-
-
-                            <span>
-                                01
-                            </span>
-
-
-                            <div>
-
-                                <strong>
-                                    Local knowledge
-                                </strong>
-
-                                <p>
-                                    Experience the bayou with someone
-                                    who knows the area.
-                                </p>
-
-                            </div>
-
-
-                        </div>
-
-
-
-                        <div class="guide-value">
-
-
-                            <span>
-                                02
-                            </span>
-
-
-                            <div>
-
-                                <strong>
-                                    Cajun hospitality
-                                </strong>
-
-                                <p>
-                                    A welcoming, relaxed experience
-                                    from start to finish.
-                                </p>
-
-                            </div>
-
-
-                        </div>
-
-
-
-                        <div class="guide-value">
-
-
-                            <span>
-                                03
-                            </span>
-
-
-                            <div>
-
-                                <strong>
-                                    Real storytelling
-                                </strong>
-
-                                <p>
-                                    Local history, stories, humor,
-                                    and plenty of Louisiana personality.
-                                </p>
-
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <a
-                        class="button button-primary"
-                        href="contact.html"
-                        style="margin-top: 30px;"
-                    >
-
-                        Get In Touch
-
-                        <span aria-hidden="true">
-                            →
-                        </span>
-
-                    </a>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ============================= -->
-        <!-- PLAN YOUR VISIT -->
-        <!-- ============================= -->
-
-        <section class="section planning-section">
-
-
-            <div class="section-shell planning-grid">
-
-
-                <div class="planning-copy reveal">
-
-
-                    <span class="section-kicker">
-                        Plan your visit
-                    </span>
-
-
-                    <h2>
-                        A few things to know before you hit the water.
-                    </h2>
-
-
-                    <p>
-
-                        A little preparation goes a long way.
-                        Dress comfortably, bring your camera,
-                        and get ready to enjoy South Louisiana
-                        from a completely different point of view.
-
-                    </p>
-
-
-                    <a
-                        class="text-link"
-                        href="#faq"
-                    >
-
-                        Read frequently asked questions
-
-                        <span aria-hidden="true">
-                            →
-                        </span>
-
-                    </a>
-
-
-                </div>
-
-
-
-                <div class="planning-cards">
-
-
-                    <article class="planning-card reveal">
-
-
-                        <span class="planning-icon">
-                            ☀
-                        </span>
-
-
-                        <h3>
-                            Dress for the weather
-                        </h3>
-
-
-                        <p>
-
-                            Comfortable clothing, sunglasses,
-                            and sunscreen are always a good idea.
-
-                        </p>
-
-
-                    </article>
-
-
-
-                    <article class="planning-card reveal">
-
-
-                        <span class="planning-icon">
-                            ◉
-                        </span>
-
-
-                        <h3>
-                            Bring your camera
-                        </h3>
-
-
-                        <p>
-
-                            The swamp is full of scenery and
-                            wildlife worth remembering.
-
-                        </p>
-
-
-                    </article>
-
-
-
-                    <article class="planning-card reveal">
-
-
-                        <span class="planning-icon">
-                            ⌖
-                        </span>
-
-
-                        <h3>
-                            Arrive a little early
-                        </h3>
-
-
-                        <p>
-
-                            Give yourself plenty of time to arrive
-                            before your scheduled tour.
-
-                        </p>
-
-
-                    </article>
-
-
-
-                    <article class="planning-card reveal">
-
-
-                        <span class="planning-icon">
-                            ≈
-                        </span>
-
-
-                        <h3>
-                            Weather matters
-                        </h3>
-
-
-                        <p>
-
-                            Conditions on the water can change,
-                            so weather may affect tour schedules.
-
-                        </p>
-
-
-                    </article>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ============================= -->
-        <!-- FAQ -->
-        <!-- ============================= -->
-
-        <section
-            class="section faq-section"
-            id="faq"
-        >
-
-
-            <div class="section-shell faq-grid">
-
-
-                <div class="faq-heading reveal">
-
-
-                    <span class="section-kicker">
-                        Frequently asked questions
-                    </span>
-
-
-                    <h2>
-                        Before you head to the bayou.
-                    </h2>
-
-
-                    <p>
-
-                        Have another question?
-                        Get in touch with us and we'll be happy to help.
-
-                    </p>
-
-
-                    <a
-                        class="button button-primary"
-                        href="contact.html"
-                        style="margin-top: 25px;"
-                    >
-
-                        Contact Us
-
-                        <span aria-hidden="true">
-                            →
-                        </span>
-
-                    </a>
-
-
-                </div>
-
-
-
-                <div class="faq-list">
-
-
-                    <!-- FAQ 1 -->
-
-                    <article class="faq-item reveal">
-
-
-                        <button
-                            class="faq-question"
-                            type="button"
-                            aria-expanded="false"
-                        >
-
-                            <span>
-                                Will we definitely see alligators?
-                            </span>
-
-                            <i>
-                                +
-                            </i>
-
-                        </button>
-
-
-                        <div class="faq-answer">
-
-                            <p>
-
-                                Wildlife is unpredictable, so sightings
-                                can never be guaranteed. Your guide will
-                                take you through areas where Louisiana
-                                wildlife is commonly seen.
-
-                            </p>
-
-                        </div>
-
-
-                    </article>
-
-
-
-                    <!-- FAQ 2 -->
-
-                    <article class="faq-item reveal">
-
-
-                        <button
-                            class="faq-question"
-                            type="button"
-                            aria-expanded="false"
-                        >
-
-                            <span>
-                                Can children come on the tour?
-                            </span>
-
-                            <i>
-                                +
-                            </i>
-
-                        </button>
-
-
-                        <div class="faq-answer">
-
-                            <p>
-
-                                Cajun & Culture is designed to be
-                                an experience families can enjoy together.
-                                Contact us if you have questions about
-                                younger children or your specific group.
-
-                            </p>
-
-                        </div>
-
-
-                    </article>
-
-
-
-                    <!-- FAQ 3 -->
-
-                    <article class="faq-item reveal">
-
-
-                        <button
-                            class="faq-question"
-                            type="button"
-                            aria-expanded="false"
-                        >
-
-                            <span>
-                                What happens if the weather is bad?
-                            </span>
-
-                            <i>
-                                +
-                            </i>
-
-                        </button>
-
-
-                        <div class="faq-answer">
-
-                            <p>
-
-                                Safety comes first. Weather conditions
-                                may affect tour times or availability.
-                                If weather creates an issue with your
-                                scheduled tour, we'll work with you
-                                on the next steps.
-
-                            </p>
-
-                        </div>
-
-
-                    </article>
-
-
-
-                    <!-- FAQ 4 -->
-
-                    <article class="faq-item reveal">
-
-
-                        <button
-                            class="faq-question"
-                            type="button"
-                            aria-expanded="false"
-                        >
-
-                            <span>
-                                Do you offer private tours?
-                            </span>
-
-                            <i>
-                                +
-                            </i>
-
-                        </button>
-
-
-                        <div class="faq-answer">
-
-                            <p>
-
-                                Private tour options may be available
-                                for families, groups, celebrations,
-                                and other special experiences.
-                                Contact us for details and availability.
-
-                            </p>
-
-                        </div>
-
-
-                    </article>
-
-
-
-                    <!-- FAQ 5 -->
-
-                    <article class="faq-item reveal">
-
-
-                        <button
-                            class="faq-question"
-                            type="button"
-                            aria-expanded="false"
-                        >
-
-                            <span>
-                                How do I book a tour?
-                            </span>
-
-                            <i>
-                                +
-                            </i>
-
-                        </button>
-
-
-                        <div class="faq-answer">
-
-                            <p>
-
-                                Visit our contact page to get in touch.
-                                We'll help you with tour details,
-                                availability, and booking.
-
-                            </p>
-
-                        </div>
-
-
-                    </article>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ============================= -->
-        <!-- FINAL CALL TO ACTION -->
-        <!-- ============================= -->
-
-        <section class="booking-section">
-
-
-            <div class="booking-background"></div>
-
-
-            <div
-                class="section-shell"
-                style="
-                    position: relative;
-                    z-index: 2;
-                    text-align: center;
-                    max-width: 850px;
-                "
-            >
-
-
-                <div class="booking-copy reveal">
-
-
-                    <span class="section-kicker light">
-                        Ready to hit the water?
-                    </span>
-
-
-                    <h2>
-                        Come pass a good time with us.
-                    </h2>
-
-
-                    <p>
-
-                        Bring your family, your friends, and your camera.
-                        Come experience a side of Louisiana you can't
-                        see from the highway.
-
-                    </p>
-
-
-
-                    <a
-                        class="button button-primary"
-                        href="contact.html"
-                        style="margin-top: 30px;"
-                    >
-
-                        Contact Cajun & Culture
-
-                        <span aria-hidden="true">
-                            →
-                        </span>
-
-                    </a>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- ============================= -->
-    <!-- FOOTER -->
-    <!-- ============================= -->
-
-    <footer class="site-footer">
-
-
-        <div class="footer-main">
-
-
-            <!-- BRAND -->
-
-            <div class="footer-brand-column">
-
-
-                <a
-                    class="brand footer-brand"
-                    href="#home"
-                >
-
-
-                    <div class="brand-mark">
-                        C&C
-                    </div>
-
-
-                    <div class="brand-copy">
-
-
-                        <strong>
-                            Cajun & Culture
-                        </strong>
-
-
-                        <span>
-                            Swamp Tours
-                        </span>
-
-
-                    </div>
-
-
-                </a>
-
-
+                <h3>Swamp tour</h3>
 
                 <p>
-
-                    Authentic South Louisiana swamp tours
-                    featuring wildlife, Cajun culture,
-                    local stories, and bayou hospitality.
-
+                    Our regular trip. Good for families, first-timers,
+                    and anybody who wants to see the bayou without
+                    figuring out a boat themselves.
                 </p>
 
+                <ul>
+                    <li>Kids are welcome</li>
+                    <li>Wildlife and cypress country</li>
+                    <li>Local history and stories</li>
+                    <li>Bring a camera</li>
+                </ul>
 
-            </div>
+                <a class="btn" href="contact.html">Ask about a tour</a>
 
+            </article>
 
+            <article class="tour">
 
-            <!-- EXPLORE -->
+                <h3>Private tour</h3>
 
-            <div class="footer-column">
+                <p>
+                    Just your bunch on the boat. Nice for birthdays,
+                    reunions, out-of-town company, or anybody who'd
+                    rather not share the ride.
+                </p>
 
+                <ul>
+                    <li>Your group only</li>
+                    <li>Room to take your time</li>
+                    <li>Good for a celebration</li>
+                    <li>Call ahead for openings</li>
+                </ul>
 
-                <h3>
-                    Explore
-                </h3>
+                <a class="btn btn-gold" href="contact.html">Ask about private trips</a>
 
-
-                <a href="#experience">
-                    The Experience
-                </a>
-
-
-                <a href="#tours">
-                    Tour Options
-                </a>
-
-
-                <a href="#gallery">
-                    Gallery
-                </a>
-
-
-                <a href="#guide">
-                    Meet Your Guide
-                </a>
-
-
-            </div>
-
-
-
-            <!-- INFORMATION -->
-
-            <div class="footer-column">
-
-
-                <h3>
-                    Information
-                </h3>
-
-
-                <a href="#faq">
-                    Frequently Asked Questions
-                </a>
-
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-
-                <a href="contact.html">
-                    Book a Tour
-                </a>
-
-
-            </div>
-
-
-
-            <!-- CONTACT -->
-
-            <div class="footer-column">
-
-
-                <h3>
-                    Get In Touch
-                </h3>
-
-
-                <a href="contact.html">
-                    Contact Cajun & Culture
-                </a>
-
-
-                <a href="contact.html">
-                    Ask About a Tour
-                </a>
-
-
-                <span>
-                    South Louisiana
-                </span>
-
-
-            </div>
-
+            </article>
 
         </div>
-
-
-
-        <div class="footer-bottom">
-
-
-            <span>
-
-                ©
-                <span id="currentYear">
-                    2026
-                </span>
-
-                Cajun & Culture Swamp Tours
-
-            </span>
-
-
-            <span>
-                Proudly rooted in South Louisiana
-            </span>
-
-
-        </div>
-
-
-    </footer>
-
-
-
-    <!-- ============================= -->
-    <!-- FLOATING CONTACT BUTTON -->
-    <!-- ============================= -->
-
-    <button
-        class="floating-book-button"
-        id="floatingBookButton"
-        type="button"
-        aria-label="Contact Cajun and Culture Swamp Tours"
-    >
-
-        Book a Tour
-
-    </button>
-
-
-
-    <!-- ============================= -->
-    <!-- IMAGE LIGHTBOX -->
-    <!-- ============================= -->
-
-    <div
-        class="image-lightbox"
-        id="imageLightbox"
-        aria-hidden="true"
-        role="dialog"
-        aria-label="Photo viewer"
-    >
-
-
-        <button
-            class="lightbox-close"
-            id="lightboxClose"
-            type="button"
-            aria-label="Close photo viewer"
-        >
-
-            ×
-
-        </button>
-
-
-        <img
-            id="lightboxImage"
-            src=""
-            alt="Expanded swamp tour gallery image"
-        >
-
 
     </div>
 
+</section>
 
 
-    <script src="script.js"></script>
+<!-- ===================== PICTURES ===================== -->
+
+<section id="gallery">
+
+    <div class="wrap">
+
+        <div class="narrow">
+            <h2 class="title">Out on the water</h2>
+            <p class="lead">
+                No two trips look the same. The light changes, the
+                water changes, and the animals go where they please.
+            </p>
+        </div>
+
+        <div class="gallery">
+
+            <div><img src="bayou-wide.jpg" alt="Wide view of the Louisiana bayou" loading="lazy"></div>
+            <div><img src="wildlife-bird.jpg" alt="Wading bird at the water's edge" loading="lazy"></div>
+            <div><img src="sunset-swamp.jpg" alt="Sunset over the swamp" loading="lazy"></div>
+            <div><img src="alligator.jpg" alt="Alligator in the swamp" loading="lazy"></div>
+            <div><img src="dock.jpg" alt="The dock where tours start" loading="lazy"></div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!--
-        IMPORTANT:
-        The old script.js makes the floating Book a Tour
-        button scroll to #booking.
+<!-- ===================== YOUR GUIDE ===================== -->
 
-        Because we now use contact.html, this little script
-        overrides that button and sends people to contact.html.
-    -->
+<section class="on-green" id="guide">
 
-    <script>
+    <div class="wrap">
 
-        document.addEventListener("DOMContentLoaded", function () {
+        <div class="row">
 
-            const floatingButton =
-                document.getElementById("floatingBookButton");
+            <div class="photo">
+                <img src="guide.jpg" alt="Your guide at Cajun and Culture Swamp Tours" loading="lazy">
+            </div>
 
-            if (floatingButton) {
+            <div>
 
-                floatingButton.addEventListener(
-                    "click",
-                    function (event) {
+                <h2 class="title">Your guide</h2>
 
-                        event.stopImmediatePropagation();
+                <p style="color:#c3cfc0;">
+                    This isn't a fellow reading off a card while he
+                    drives the boat. It's somebody who has been coming
+                    out here his whole life, showing you the place he
+                    knows best and telling you about it the way he'd
+                    tell a neighbor.
+                </p>
 
-                        window.location.href =
-                            "contact.html";
+                <p style="color:#c3cfc0; margin-top:16px;">
+                    Ask questions. Take your time. That's the point.
+                </p>
 
-                    },
-                    true
-                );
+                <p style="margin-top:26px;">
+                    <a class="btn btn-gold" href="contact.html">Get in touch</a>
+                </p>
 
-            }
+            </div>
 
-        });
+        </div>
 
-    </script>
+    </div>
+
+</section>
+
+
+<!-- ===================== GOOD TO KNOW ===================== -->
+
+<section>
+
+    <div class="wrap">
+
+        <div class="narrow">
+            <h2 class="title">Before you come out</h2>
+            <p class="lead">
+                Nothing complicated. A few things that make the trip
+                more comfortable.
+            </p>
+        </div>
+
+        <div class="on-green" style="padding:34px 32px; border-radius:3px;">
+
+            <ul class="know">
+
+                <li>
+                    <strong>Dress easy</strong>
+                    Comfortable clothes, sunglasses, sunscreen, and a
+                    hat if the sun's out.
+                </li>
+
+                <li>
+                    <strong>Bring a camera</strong>
+                    Phone works fine. You'll want pictures.
+                </li>
+
+                <li>
+                    <strong>Come a little early</strong>
+                    Gives you time to park and get down to the dock
+                    without rushing.
+                </li>
+
+                <li>
+                    <strong>Watch the weather</strong>
+                    Storms can move tour times around. Safety first
+                    out on the water.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================== QUESTIONS ===================== -->
+
+<section id="questions">
+
+    <div class="wrap narrow">
+
+        <h2 class="title">Questions we get a lot</h2>
+        <p class="lead">
+            If yours isn't here, just reach out and ask.
+        </p>
+
+        <details>
+            <summary>Will we see an alligator?</summary>
+            <p>
+                Usually, but we can't promise it. They're wild animals
+                and they do what they want. We run through the spots
+                where they're most often out.
+            </p>
+        </details>
+
+        <details>
+            <summary>Can we bring the kids?</summary>
+            <p>
+                Absolutely. It's built to be a trip the whole family
+                can enjoy together. If you've got real little ones,
+                give us a call and we'll talk it through.
+            </p>
+        </details>
+
+        <details>
+            <summary>What if the weather turns?</summary>
+            <p>
+                Safety comes first, so weather can change tour times or
+                push a trip. If yours is affected, we'll get in touch
+                and work out what's next with you.
+            </p>
+        </details>
+
+        <details>
+            <summary>Do you do private tours?</summary>
+            <p>
+                We do, when the boat's open. Families, groups,
+                birthdays, anniversaries. Contact us for openings.
+            </p>
+        </details>
+
+        <details>
+            <summary>How do I book?</summary>
+            <p>
+                Head over to the contact page and send us a note. We'll
+                get back to you with times, details, and how to hold
+                your spot.
+            </p>
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- ===================== CLOSING CALL ===================== -->
+
+<section class="closing">
+
+    <div class="wrap">
+
+        <h2>Come pass a good time.</h2>
+
+        <p>
+            Bring your people, bring your camera, and we'll take care
+            of the rest.
+        </p>
+
+        <a class="btn btn-gold" href="contact.html">Book a tour</a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ===================== FOOTER ===================== -->
+
+<footer>
+
+    <div class="wrap">
+
+        <div class="foot-cols">
+
+            <div>
+
+                <a class="logo" href="index.html" style="margin-bottom:14px;">
+                    <span class="sign-name">Cajun &amp; Culture</span>
+                    <span class="sub">Swamp Tours</span>
+                </a>
+
+                <p style="margin:0; max-width:34ch;">
+                    Family swamp tours in South Louisiana. Wildlife,
+                    cypress country, and the stories that go with it.
+                </p>
+
+            </div>
+
+            <div>
+                <h3>Look around</h3>
+                <a href="#bayou">The bayou</a>
+                <a href="#tours">Tours</a>
+                <a href="#gallery">Pictures</a>
+                <a href="#guide">Your guide</a>
+            </div>
+
+            <div>
+                <h3>Get in touch</h3>
+                <a href="#questions">Questions</a>
+                <a href="contact.html">Contact us</a>
+                <a href="contact.html">Book a tour</a>
+            </div>
+
+        </div>
+
+        <div class="foot-bottom">
+            &copy; <span id="year">2026</span> Cajun &amp; Culture Swamp Tours &middot; South Louisiana
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 
 </body>
