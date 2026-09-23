@@ -14,509 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-<style>
-
-/* ============================================================
-   CAJUN & CULTURE SWAMP TOURS
-   All the styling lives right here in this file.
-   Colors are set once below, so you can change the whole
-   look of the site by editing these few lines.
-   ============================================================ */
-
-:root {
-    --paper:      #f3ead6;   /* aged paper background        */
-    --paper-dark: #e6d9bd;   /* slightly darker paper        */
-    --cypress:    #1d2e21;   /* deep swamp green             */
-    --cypress-lt: #2f4634;   /* lighter green                */
-    --brick:      #a8412a;   /* sign-painter red             */
-    --gold:       #d9a326;   /* mustard gold                 */
-    --ink:        #2b241a;   /* body text                    */
-    --ink-soft:   #5c5142;   /* quieter text                 */
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-@media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { transition: none !important; }
-}
-
-body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Libre Franklin", Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    line-height: 1.65;
-}
-
-img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-a { color: var(--brick); }
-
-h1, h2, h3, .sign-name {
-    font-family: "Alfa Slab One", Georgia, serif;
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: 0.01em;
-    margin: 0;
-}
-
-/* Page width */
-.wrap {
-    width: 100%;
-    max-width: 1060px;
-    margin: 0 auto;
-    padding: 0 22px;
-}
-
-.narrow { max-width: 680px; }   /* keeps paragraphs easy to read */
-
-
-/* ------------------------------------------------------------
-   TOP BAR
-   ------------------------------------------------------------ */
-
-.topbar {
-    background: var(--cypress);
-    color: var(--paper);
-    border-bottom: 5px solid var(--gold);
-}
-
-.topbar .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    flex-wrap: wrap;
-    padding-top: 16px;
-    padding-bottom: 16px;
-}
-
-.logo {
-    display: block;
-    color: var(--paper);
-    text-decoration: none;
-}
-
-.logo .sign-name {
-    font-size: 26px;
-    color: var(--gold);
-}
-
-.logo .sub {
-    display: block;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    color: #c8d3c4;
-    margin-top: 4px;
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    flex-wrap: wrap;
-}
-
-.menu a {
-    color: var(--paper);
-    text-decoration: none;
-    font-size: 16px;
-    padding: 4px 0;
-    border-bottom: 2px solid transparent;
-}
-
-.menu a:hover,
-.menu a:focus-visible { border-bottom-color: var(--gold); }
-
-
-/* ------------------------------------------------------------
-   BUTTONS
-   ------------------------------------------------------------ */
-
-.btn {
-    display: inline-block;
-    background: var(--brick);
-    color: #fff5e4;
-    font-weight: 700;
-    font-size: 17px;
-    text-decoration: none;
-    padding: 15px 30px;
-    border: 3px solid var(--ink);
-    border-radius: 3px;
-    box-shadow: 4px 4px 0 var(--ink);
-}
-
-.btn:hover,
-.btn:focus-visible {
-    background: #8f3523;
-    box-shadow: 2px 2px 0 var(--ink);
-    transform: translate(2px, 2px);
-}
-
-.btn-gold {
-    background: var(--gold);
-    color: var(--ink);
-}
-
-.btn-gold:hover,
-.btn-gold:focus-visible { background: #c4911c; }
-
-:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
-
-
-/* ------------------------------------------------------------
-   HERO — photo with a painted sign sitting on it
-   ------------------------------------------------------------ */
-
-.hero {
-    position: relative;
-    background: var(--cypress) url("bayou-wide.jpg") center / cover no-repeat;
-    padding: 90px 0 100px;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(18, 30, 21, 0.55);
-}
-
-.hero .wrap { position: relative; }
-
-.sign {
-    max-width: 640px;
-    background: var(--paper);
-    border: 4px solid var(--ink);
-    border-radius: 4px;
-    box-shadow: 10px 10px 0 rgba(20, 30, 22, 0.55);
-    padding: 40px 38px 42px;
-}
-
-.sign h1 {
-    font-size: clamp(34px, 6vw, 56px);
-    color: var(--cypress);
-}
-
-.sign .rule {
-    width: 90px;
-    height: 6px;
-    background: var(--gold);
-    margin: 22px 0;
-}
-
-.sign p {
-    margin: 0 0 28px;
-    font-size: 19px;
-    color: var(--ink-soft);
-}
-
-.hero-note {
-    margin-top: 26px;
-    color: var(--paper);
-    font-size: 17px;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-}
-
-
-/* ------------------------------------------------------------
-   SECTIONS
-   ------------------------------------------------------------ */
-
-section { padding: 74px 0; }
-
-.title {
-    font-size: clamp(28px, 4.4vw, 40px);
-    color: var(--cypress);
-    margin-bottom: 14px;
-}
-
-.lead {
-    font-size: 19px;
-    color: var(--ink-soft);
-    margin: 0 0 40px;
-}
-
-.on-green {
-    background: var(--cypress);
-    color: #e9e2d0;
-}
-
-.on-green .title { color: var(--gold); }
-.on-green .lead  { color: #c3cfc0; }
-
-.band {
-    background: var(--gold);
-    height: 12px;
-}
-
-
-/* Two-up photo and text rows */
-
-.row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 44px;
-    align-items: center;
-    margin-bottom: 58px;
-}
-
-.row:last-child { margin-bottom: 0; }
-
-.row.flip .photo { order: 2; }
-
-.photo {
-    height: 330px;
-    border: 4px solid var(--ink);
-    border-radius: 3px;
-    overflow: hidden;
-    background: var(--cypress-lt);
-}
-
-.row h3 {
-    font-size: 26px;
-    color: var(--brick);
-    margin-bottom: 12px;
-}
-
-.row p { margin: 0; color: var(--ink-soft); }
-
-
-/* ------------------------------------------------------------
-   TOURS
-   ------------------------------------------------------------ */
-
-.tours {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-}
-
-.tour {
-    background: var(--paper);
-    border: 4px solid var(--ink);
-    border-radius: 3px;
-    padding: 34px 30px;
-}
-
-.tour h3 {
-    font-size: 27px;
-    color: var(--cypress);
-    margin-bottom: 14px;
-}
-
-.tour p { margin: 0 0 20px; color: var(--ink-soft); }
-
-.tour ul {
-    list-style: none;
-    margin: 0 0 26px;
-    padding: 0;
-}
-
-.tour li {
-    padding: 9px 0 9px 26px;
-    border-top: 1px solid var(--paper-dark);
-    position: relative;
-}
-
-.tour li::before {
-    content: "\2748";           /* little fleur-ish mark */
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-}
-
-
-/* ------------------------------------------------------------
-   GALLERY
-   ------------------------------------------------------------ */
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-}
-
-.gallery div {
-    height: 240px;
-    border: 4px solid var(--ink);
-    border-radius: 3px;
-    overflow: hidden;
-    background: var(--cypress-lt);
-}
-
-.gallery div:first-child { grid-column: span 2; }
-
-
-/* ------------------------------------------------------------
-   GOOD TO KNOW
-   ------------------------------------------------------------ */
-
-.know {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px 40px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.know li {
-    border-top: 2px solid var(--cypress-lt);
-    padding: 16px 0;
-}
-
-.know strong {
-    display: block;
-    font-size: 19px;
-    color: var(--gold);
-    margin-bottom: 4px;
-}
-
-
-/* ------------------------------------------------------------
-   QUESTIONS (native open/close, no scripts needed)
-   ------------------------------------------------------------ */
-
-details {
-    border-bottom: 2px solid var(--paper-dark);
-    padding: 6px 0;
-}
-
-summary {
-    cursor: pointer;
-    list-style: none;
-    padding: 16px 40px 16px 0;
-    font-weight: 700;
-    font-size: 19px;
-    color: var(--cypress);
-    position: relative;
-}
-
-summary::-webkit-details-marker { display: none; }
-
-summary::after {
-    content: "+";
-    position: absolute;
-    right: 6px;
-    top: 12px;
-    font-size: 26px;
-    color: var(--brick);
-    line-height: 1;
-}
-
-details[open] summary::after { content: "\2013"; }
-
-details p {
-    margin: 0 0 18px;
-    color: var(--ink-soft);
-    max-width: 62ch;
-}
-
-
-/* ------------------------------------------------------------
-   CLOSING CALL AND FOOTER
-   ------------------------------------------------------------ */
-
-.closing {
-    background: var(--brick);
-    color: #fff3df;
-    text-align: center;
-}
-
-.closing h2 {
-    font-size: clamp(30px, 5vw, 44px);
-    margin-bottom: 18px;
-}
-
-.closing p {
-    font-size: 20px;
-    max-width: 30em;
-    margin: 0 auto 32px;
-}
-
-footer {
-    background: var(--cypress);
-    color: #bfcbbd;
-    padding: 54px 0 30px;
-    font-size: 16px;
-}
-
-.foot-cols {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 36px;
-    margin-bottom: 38px;
-}
-
-footer h3 {
-    font-size: 18px;
-    color: var(--gold);
-    margin-bottom: 14px;
-}
-
-footer a {
-    display: block;
-    color: #e2dbca;
-    text-decoration: none;
-    padding: 5px 0;
-}
-
-footer a:hover,
-footer a:focus-visible { color: #fff; text-decoration: underline; }
-
-.foot-bottom {
-    border-top: 1px solid var(--cypress-lt);
-    padding-top: 22px;
-    font-size: 15px;
-    color: #94a293;
-}
-
-
-/* ------------------------------------------------------------
-   PHONES AND TABLETS
-   ------------------------------------------------------------ */
-
-@media (max-width: 860px) {
-
-    body { font-size: 17px; }
-
-    .topbar .wrap { justify-content: flex-start; }
-
-    .menu { gap: 16px; }
-
-    .hero { padding: 56px 0 64px; }
-
-    .sign { padding: 30px 24px 32px; }
-
-    section { padding: 54px 0; }
-
-    .row,
-    .tours,
-    .know {
-        grid-template-columns: 1fr;
-        gap: 26px;
-    }
-
-    .row { margin-bottom: 42px; }
-
-    .row.flip .photo { order: 0; }
-
-    .photo { height: 250px; }
-
-    .gallery { grid-template-columns: 1fr 1fr; }
-
-    .gallery div { height: 175px; }
-
-    .gallery div:first-child { grid-column: span 2; }
-
-    .foot-cols { grid-template-columns: 1fr; gap: 26px; }
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -539,6 +37,7 @@ footer a:focus-visible { color: #fff; text-decoration: underline; }
             <a href="#bayou">The Bayou</a>
             <a href="#tours">Tours</a>
             <a href="#gallery">Pictures</a>
+            <a href="#location">Location</a>
             <a href="#guide">Your Guide</a>
             <a href="#questions">Questions</a>
             <a href="contact.html">Contact</a>
@@ -902,6 +401,57 @@ footer a:focus-visible { color: #fff; text-decoration: underline; }
 </section>
 
 
+
+
+<!-- ===================== LOCATION ===================== -->
+
+<section class="location-section" id="location">
+
+    <div class="wrap">
+
+        <div class="location-grid">
+
+            <div class="location-copy">
+
+                <h2>Come find us.</h2>
+
+                <p>
+                    This is where the adventure starts. Head on out to
+                    Plaquemine and meet us here before your tour.
+                </p>
+
+                <div class="location-address">
+                    <strong>Cajun &amp; Culture Swamp Tours</strong>
+                    36020 Highway 75<br>
+                    Plaquemine, LA 70764
+                </div>
+
+                <a
+                    class="btn"
+                    href="https://www.google.com/maps/dir/?api=1&amp;destination=36020+Highway+75,+Plaquemine,+LA+70764"
+                    target="_blank"
+                    rel="noopener"
+                >Get directions</a>
+
+            </div>
+
+            <div class="map-wrap">
+                <iframe
+                    src="https://www.google.com/maps?q=36020+Highway+75,+Plaquemine,+LA+70764&amp;output=embed&amp;maptype=satellite"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Satellite map showing Cajun &amp; Culture Swamp Tours at 36020 Highway 75, Plaquemine, Louisiana"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- ===================== CLOSING CALL ===================== -->
 
 <section class="closing">
@@ -960,6 +510,7 @@ footer a:focus-visible { color: #fff; text-decoration: underline; }
                 <a href="#questions">Questions</a>
                 <a href="contact.html">Contact us</a>
                 <a href="contact.html">Book a tour</a>
+                <a href="#location">36020 Highway 75<br>Plaquemine, LA 70764</a>
             </div>
 
         </div>
