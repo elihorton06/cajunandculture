@@ -244,34 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // ==========================
-    // Booking Form
-    // ==========================
-
-    bookingForm.addEventListener("submit", e => {
-
-        e.preventDefault();
-
-        const button =
-            bookingForm.querySelector(".form-submit");
-
-        const original = button.innerHTML;
-
-        button.disabled = true;
-
-        button.innerHTML =
-            "Tour request ready ✓";
-
-        setTimeout(() => {
-
-            button.disabled = false;
-
-            button.innerHTML = original;
-
-        }, 2200);
-
-    });
-
+    
     // ==========================
     // Smooth Anchor Scrolling
     // ==========================
