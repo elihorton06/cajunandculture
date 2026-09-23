@@ -3,640 +3,767 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="description"
+    content="Call or message Cajun & Culture Swamp Tours to plan a swamp tour in South Louisiana."
+>
+
+<meta name="theme-color" content="#1d2e21">
+
+<title>Contact | Cajun &amp; Culture Swamp Tours</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+
+/* ============================================================
+   CAJUN & CULTURE — CONTACT PAGE
+   ============================================================ */
+
+:root {
+    --paper:      #f3ead6;
+    --paper-dark: #e6d9bd;
+    --cypress:    #1d2e21;
+    --cypress-lt: #2f4634;
+    --brick:      #a8412a;
+    --gold:       #d9a326;
+    --ink:        #2b241a;
+    --ink-soft:   #5c5142;
+}
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+* {
+    box-sizing: border-box;
+}
 
-    <meta
-        name="description"
-        content="Contact Cajun & Culture Swamp Tours to plan your South Louisiana swamp tour."
-    >
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
 
-    <meta name="theme-color" content="#cbd8cc">
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
 
-    <title>Contact | Cajun & Culture Swamp Tours</title>
+    font-family:
+        "Libre Franklin",
+        Helvetica,
+        Arial,
+        sans-serif;
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    font-size: 18px;
+    line-height: 1.65;
+}
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+h1,
+h2,
+h3,
+.sign-name {
+    font-family:
+        "Alfa Slab One",
+        Georgia,
+        serif;
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap"
-        rel="stylesheet"
-    >
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    margin: 0;
+}
 
-    <link rel="stylesheet" href="style.css">
+.wrap {
+    width: 100%;
+    max-width: 1060px;
 
+    margin: 0 auto;
 
-    <style>
+    padding:
+        0 22px;
+}
 
-        /* =========================
-           CONTACT PAGE
-        ========================= */
+:focus-visible {
+    outline:
+        3px solid
+        var(--gold);
 
-        .contact-page {
-            min-height: 100vh;
-            padding: 165px 20px 100px;
-            position: relative;
-            overflow: hidden;
+    outline-offset:
+        3px;
+}
 
-            background:
-                radial-gradient(
-                    circle at 15% 10%,
-                    rgba(255,255,255,.42),
-                    transparent 30rem
-                ),
-                #c9d8cf;
-        }
 
+/* ------------------------------------------------------------
+   TOP BAR
+------------------------------------------------------------ */
 
-        .contact-page::after {
-            content: "";
-            position: absolute;
-            right: -180px;
-            bottom: -220px;
+.topbar {
+    background:
+        var(--cypress);
 
-            width: 600px;
-            height: 600px;
+    color:
+        var(--paper);
 
-            border-radius: 50%;
+    border-bottom:
+        5px solid
+        var(--gold);
+}
 
-            background: rgba(35,72,60,.07);
+.topbar .wrap {
+    display: flex;
 
-            pointer-events: none;
-        }
+    align-items: center;
+    justify-content: space-between;
 
+    gap: 18px;
 
-        .contact-shell {
-            width: min(1120px, 100%);
-            margin: auto;
+    flex-wrap: wrap;
 
-            display: grid;
-            grid-template-columns: .9fr 1.1fr;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
 
-            gap: 55px;
-            align-items: center;
+.logo {
+    display: block;
 
-            position: relative;
-            z-index: 2;
-        }
+    color:
+        var(--paper);
 
+    text-decoration: none;
+}
 
+.logo .sign-name {
+    font-size: 26px;
 
-        /* =========================
-           LEFT SIDE
-        ========================= */
+    color:
+        var(--gold);
+}
 
-        .contact-intro {
-            max-width: 520px;
-        }
+.logo .sub {
+    display: block;
 
+    font-size: 13px;
 
-        .contact-kicker {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+    letter-spacing:
+        0.18em;
 
-            color: #c86b3c;
+    color:
+        #c8d3c4;
 
-            font-size: .76rem;
-            font-weight: 800;
+    margin-top: 4px;
+}
 
-            letter-spacing: .13em;
-            text-transform: uppercase;
-        }
+.menu {
+    display: flex;
 
+    align-items: center;
 
-        .contact-kicker::before {
-            content: "";
+    gap: 22px;
 
-            width: 38px;
-            height: 3px;
+    flex-wrap: wrap;
+}
 
-            border-radius: 999px;
+.menu a {
+    color:
+        var(--paper);
 
-            background: #d6a14d;
-        }
+    text-decoration: none;
 
+    font-size: 16px;
 
-        .contact-intro h1 {
-            margin-top: 20px;
+    padding:
+        4px 0;
 
-            color: #17342c;
+    border-bottom:
+        2px solid
+        transparent;
+}
 
-            font-family: "Fraunces", serif;
+.menu a:hover,
+.menu a:focus-visible {
+    border-bottom-color:
+        var(--gold);
+}
 
-            font-size: clamp(3.4rem, 7vw, 6.5rem);
 
-            line-height: .93;
+/* ------------------------------------------------------------
+   PAGE HEADING
+------------------------------------------------------------ */
 
-            letter-spacing: -.055em;
-        }
+.page-head {
+    background:
+        var(--cypress);
 
+    color:
+        #e9e2d0;
 
-        .contact-intro h1 span {
-            display: block;
+    padding:
+        56px 0 50px;
+}
 
-            color: #c86b3c;
-        }
+.page-head h1 {
+    font-size:
+        clamp(
+            32px,
+            5.4vw,
+            50px
+        );
 
+    color:
+        var(--gold);
 
-        .contact-intro > p {
-            margin-top: 25px;
+    max-width:
+        22ch;
+}
 
-            color: #44564d;
+.page-head p {
+    margin:
+        18px 0 0;
 
-            font-size: 1.08rem;
+    font-size:
+        19px;
 
-            line-height: 1.8;
-        }
+    color:
+        #c3cfc0;
 
+    max-width:
+        52ch;
+}
 
+.band {
+    background:
+        var(--gold);
 
-        /* =========================
-           CALL CARD
-        ========================= */
+    height:
+        12px;
+}
 
-        .call-card {
-            margin-top: 34px;
 
-            padding: 26px;
+/* ------------------------------------------------------------
+   MAIN LAYOUT
+------------------------------------------------------------ */
 
-            display: flex;
-            align-items: center;
+.contact-grid {
+    display: grid;
 
-            gap: 20px;
+    grid-template-columns:
+        1fr 1.15fr;
 
-            border-radius: 20px;
+    gap: 46px;
 
-            background: #23483c;
+    align-items: start;
 
-            color: white;
+    padding:
+        70px 0 80px;
+}
 
-            text-decoration: none;
 
-            box-shadow:
-                0 22px 55px
-                rgba(23,52,44,.22);
+/* ------------------------------------------------------------
+   PHONE
+------------------------------------------------------------ */
 
-            transition:
-                transform .2s ease,
-                box-shadow .2s ease;
-        }
+.call-block {
+    display: block;
 
+    background:
+        var(--brick);
 
-        .call-card:hover {
-            transform: translateY(-4px);
+    color:
+        #fff3df;
 
-            box-shadow:
-                0 28px 65px
-                rgba(23,52,44,.28);
-        }
+    text-decoration: none;
 
+    border:
+        4px solid
+        var(--ink);
 
-        .call-icon {
-            width: 62px;
-            height: 62px;
+    border-radius:
+        4px;
 
-            flex: 0 0 62px;
+    box-shadow:
+        7px 7px 0
+        var(--ink);
 
-            display: grid;
-            place-items: center;
+    padding:
+        28px 26px;
+}
 
-            border-radius: 50%;
+.call-block span {
+    display: block;
 
-            background: #c86b3c;
+    font-size:
+        16px;
 
-            font-size: 1.6rem;
-        }
+    color:
+        #ffe6c9;
+}
 
+.call-block .number {
+    font-family:
+        "Alfa Slab One",
+        Georgia,
+        serif;
 
-        .call-card small {
-            display: block;
+    font-size:
+        clamp(
+            30px,
+            5vw,
+            40px
+        );
 
-            color: rgba(255,255,255,.65);
+    line-height:
+        1.1;
 
-            font-size: .73rem;
+    margin:
+        8px 0 6px;
 
-            font-weight: 800;
+    color:
+        #fff5e4;
+}
 
-            letter-spacing: .1em;
+.call-block:hover,
+.call-block:focus-visible {
+    background:
+        #8f3523;
 
-            text-transform: uppercase;
-        }
+    box-shadow:
+        3px 3px 0
+        var(--ink);
 
+    transform:
+        translate(
+            4px,
+            4px
+        );
+}
 
-        .call-card strong {
-            display: block;
 
-            margin-top: 3px;
+/* ------------------------------------------------------------
+   TEXT BUTTON
+------------------------------------------------------------ */
 
-            font-family: "Fraunces", serif;
+.text-block {
+    display: flex;
 
-            font-size: 1.8rem;
+    justify-content:
+        space-between;
 
-            line-height: 1.1;
-        }
+    align-items:
+        center;
 
+    gap:
+        14px;
 
-        .call-note {
-            display: block;
+    margin-top:
+        16px;
 
-            margin-top: 5px;
+    background:
+        var(--paper-dark);
 
-            color: rgba(255,255,255,.7);
+    color:
+        var(--ink);
 
-            font-size: .8rem;
-        }
+    text-decoration:
+        none;
 
+    font-weight:
+        700;
 
+    border:
+        3px solid
+        var(--ink);
 
-        /* =========================
-           TEXT BUTTON
-        ========================= */
+    border-radius:
+        3px;
 
-        .text-link-card {
-            margin-top: 12px;
+    padding:
+        16px 20px;
+}
 
-            padding: 15px 18px;
+.text-block:hover,
+.text-block:focus-visible {
+    background:
+        var(--gold);
+}
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
 
-            gap: 15px;
+/* ------------------------------------------------------------
+   NOTES
+------------------------------------------------------------ */
 
-            border:
-                1px solid
-                rgba(35,72,60,.15);
+.hours {
+    margin-top:
+        30px;
 
-            border-radius: 14px;
+    border-top:
+        3px solid
+        var(--cypress-lt);
 
-            background: rgba(255,255,255,.27);
+    padding-top:
+        22px;
+}
 
-            color: #17342c;
+.hours h2 {
+    font-size:
+        22px;
 
-            text-decoration: none;
+    color:
+        var(--cypress);
 
-            font-weight: 800;
-        }
+    margin-bottom:
+        10px;
+}
 
+.hours p {
+    margin:
+        0 0 12px;
 
-        .text-link-card span:last-child {
-            color: #c86b3c;
-        }
+    color:
+        var(--ink-soft);
+}
 
+.hours a {
+    color:
+        var(--brick);
 
+    font-weight:
+        700;
+}
 
-        /* =========================
-           DIRECT EMAIL
-        ========================= */
+.back {
+    display:
+        inline-block;
 
-        .direct-email-card {
-            margin-top: 12px;
+    margin-top:
+        26px;
 
-            padding: 15px 18px;
+    color:
+        var(--cypress);
 
-            display: block;
+    font-weight:
+        700;
 
-            border:
-                1px solid
-                rgba(35,72,60,.15);
+    text-decoration:
+        none;
 
-            border-radius: 14px;
+    border-bottom:
+        2px solid
+        var(--gold);
 
-            background: rgba(255,255,255,.27);
+    padding-bottom:
+        2px;
+}
 
-            color: #17342c;
+.back:hover,
+.back:focus-visible {
+    color:
+        var(--brick);
+}
 
-            text-decoration: none;
-        }
 
+/* ------------------------------------------------------------
+   MESSAGE FORM
+------------------------------------------------------------ */
 
-        .direct-email-card small {
-            display: block;
+.form-card {
+    background:
+        #fbf6ea;
 
-            color: #66756d;
+    border:
+        4px solid
+        var(--ink);
 
-            font-size: .72rem;
+    border-radius:
+        4px;
 
-            font-weight: 800;
+    padding:
+        34px 32px 30px;
+}
 
-            letter-spacing: .08em;
+.form-card h2 {
+    font-size:
+        30px;
 
-            text-transform: uppercase;
-        }
+    color:
+        var(--cypress);
 
+    margin-bottom:
+        10px;
+}
 
-        .direct-email-card strong {
-            display: block;
+.form-card > p {
+    margin:
+        0 0 26px;
 
-            margin-top: 3px;
+    color:
+        var(--ink-soft);
 
-            font-size: .95rem;
+    max-width:
+        46ch;
+}
 
-            overflow-wrap: anywhere;
-        }
+form {
+    display:
+        grid;
 
+    gap:
+        18px;
+}
 
+.two-up {
+    display:
+        grid;
 
-        /* =========================
-           FORM CARD
-        ========================= */
+    grid-template-columns:
+        1fr 1fr;
 
-        .contact-form-card {
-            padding: 38px;
+    gap:
+        16px;
+}
 
-            border-radius: 26px;
+label {
+    display:
+        grid;
 
-            background: rgba(248,245,237,.97);
+    gap:
+        6px;
+}
 
-            box-shadow:
-                0 25px 70px
-                rgba(23,52,44,.17);
-        }
+label > span {
+    font-weight:
+        700;
 
+    font-size:
+        16px;
 
-        .form-kicker {
-            color: #c86b3c;
+    color:
+        var(--cypress);
+}
 
-            font-size: .73rem;
+input,
+select,
+textarea {
+    width:
+        100%;
 
-            font-weight: 800;
+    font-family:
+        inherit;
 
-            letter-spacing: .12em;
+    font-size:
+        17px;
 
-            text-transform: uppercase;
-        }
+    color:
+        var(--ink);
 
+    background:
+        #fff;
 
-        .contact-form-card h2 {
-            margin-top: 8px;
+    padding:
+        13px 14px;
 
-            color: #17342c;
+    border:
+        2px solid
+        #b8ab92;
 
-            font-family: "Fraunces", serif;
+    border-radius:
+        3px;
+}
 
-            font-size: 2.5rem;
+textarea {
+    min-height:
+        150px;
 
-            line-height: 1.05;
-        }
+    resize:
+        vertical;
+}
 
+input:focus,
+select:focus,
+textarea:focus {
+    outline:
+        none;
 
-        .contact-form-card > p {
-            margin-top: 12px;
+    border-color:
+        var(--cypress);
 
-            color: #5d6a64;
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            217,
+            163,
+            38,
+            0.45
+        );
+}
 
-            line-height: 1.65;
-        }
+.send {
+    justify-self:
+        start;
 
+    font-family:
+        inherit;
 
-        .contact-form {
-            margin-top: 28px;
+    font-weight:
+        700;
 
-            display: grid;
+    font-size:
+        17px;
 
-            gap: 17px;
-        }
+    color:
+        #fff5e4;
 
+    background:
+        var(--brick);
 
-        .form-row {
-            display: grid;
+    padding:
+        15px 32px;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+    border:
+        3px solid
+        var(--ink);
 
-            gap: 14px;
-        }
+    border-radius:
+        3px;
 
+    box-shadow:
+        4px 4px 0
+        var(--ink);
 
-        .contact-form label {
-            display: grid;
+    cursor:
+        pointer;
+}
 
-            gap: 7px;
-        }
+.send:hover,
+.send:focus-visible {
+    background:
+        #8f3523;
 
+    box-shadow:
+        2px 2px 0
+        var(--ink);
 
-        .contact-form label > span {
-            color: #17342c;
+    transform:
+        translate(
+            2px,
+            2px
+        );
+}
 
-            font-size: .78rem;
+.form-note {
+    margin:
+        0;
 
-            font-weight: 800;
-        }
+    font-size:
+        16px;
 
+    color:
+        var(--ink-soft);
+}
 
-        .contact-form input,
-        .contact-form select,
-        .contact-form textarea {
-            width: 100%;
+.form-note a {
+    color:
+        var(--brick);
 
-            padding: 14px 15px;
+    font-weight:
+        700;
+}
 
-            border:
-                1px solid
-                rgba(31,41,36,.14);
 
-            border-radius: 12px;
+/* ------------------------------------------------------------
+   FOOTER
+------------------------------------------------------------ */
 
-            background: white;
+footer {
+    background:
+        var(--cypress);
 
-            color: #1f2924;
+    color:
+        #94a293;
 
-            outline: none;
-        }
+    padding:
+        30px 0;
 
+    font-size:
+        15px;
+}
 
-        .contact-form textarea {
-            min-height: 150px;
+footer .wrap {
+    display:
+        flex;
 
-            resize: vertical;
-        }
+    justify-content:
+        space-between;
 
+    gap:
+        16px;
 
-        .contact-form input:focus,
-        .contact-form select:focus,
-        .contact-form textarea:focus {
-            border-color: #5f7f70;
+    flex-wrap:
+        wrap;
+}
 
-            box-shadow:
-                0 0 0 3px
-                rgba(95,127,112,.12);
-        }
 
+/* ------------------------------------------------------------
+   MOBILE
+------------------------------------------------------------ */
 
-        .send-button {
-            min-height: 56px;
+@media (max-width: 860px) {
 
-            padding: 0 24px;
+    body {
+        font-size:
+            17px;
+    }
 
-            border: 0;
+    .topbar .wrap {
+        justify-content:
+            flex-start;
+    }
 
-            border-radius: 13px;
+    .menu {
+        gap:
+            16px;
+    }
 
-            background: #c86b3c;
+    .page-head {
+        padding:
+            40px 0 36px;
+    }
 
-            color: white;
+    .contact-grid {
+        grid-template-columns:
+            1fr;
 
-            font-weight: 800;
+        gap:
+            36px;
 
-            cursor: pointer;
+        padding:
+            46px 0 56px;
+    }
 
-            box-shadow:
-                6px 7px 0
-                rgba(146,67,36,.16);
+    .two-up {
+        grid-template-columns:
+            1fr;
+    }
 
-            transition:
-                transform .2s ease;
-        }
+    .form-card {
+        padding:
+            26px 20px 24px;
+    }
 
+    .form-card h2 {
+        font-size:
+            26px;
+    }
 
-        .send-button:hover {
-            transform: translateY(-2px);
-        }
+}
 
-
-        .form-note {
-            color: #69766f;
-
-            font-size: .76rem;
-
-            line-height: 1.6;
-
-            text-align: center;
-        }
-
-
-        .form-note a {
-            color: #23483c;
-
-            font-weight: 800;
-        }
-
-
-
-        /* =========================
-           BACK HOME
-        ========================= */
-
-        .back-home {
-            margin-top: 30px;
-
-            display: inline-flex;
-            align-items: center;
-
-            gap: 8px;
-
-            color: #23483c;
-
-            font-weight: 800;
-
-            text-decoration: none;
-        }
-
-
-        .back-home:hover {
-            color: #c86b3c;
-        }
-
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 850px) {
-
-            .contact-page {
-                padding-top: 130px;
-            }
-
-
-            .contact-shell {
-                grid-template-columns: 1fr;
-            }
-
-
-            .contact-intro {
-                max-width: none;
-            }
-
-        }
-
-
-        @media (max-width: 600px) {
-
-            .contact-page {
-                padding:
-                    115px 14px
-                    70px;
-            }
-
-
-            .contact-intro h1 {
-                font-size:
-                    clamp(
-                        3rem,
-                        16vw,
-                        4.5rem
-                    );
-            }
-
-
-            .call-card {
-                padding: 19px;
-
-                gap: 14px;
-            }
-
-
-            .call-icon {
-                width: 52px;
-                height: 52px;
-
-                flex-basis: 52px;
-            }
-
-
-            .call-card strong {
-                font-size: 1.45rem;
-            }
-
-
-            .text-link-card {
-                align-items: flex-start;
-
-                flex-direction: column;
-
-                gap: 2px;
-            }
-
-
-            .contact-form-card {
-                padding: 25px 20px;
-            }
-
-
-            .contact-form-card h2 {
-                font-size: 2rem;
-            }
-
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -644,114 +771,39 @@
 <body>
 
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+<!-- ===================== TOP BAR ===================== -->
 
-    <header
-        class="site-header scrolled"
-        id="siteHeader"
-    >
+<header class="topbar">
 
-        <div class="nav-wrap">
+    <div class="wrap">
 
+        <a
+            class="logo"
+            href="index.html"
+        >
 
-            <a
-                class="brand"
-                href="index.html"
-                aria-label="Cajun and Culture home"
-            >
+            <span class="sign-name">
+                Cajun &amp; Culture
+            </span>
 
-                <div class="brand-mark">
-                    C&C
-                </div>
+            <span class="sub">
+                Swamp Tours
+            </span>
 
-
-                <div class="brand-copy">
-
-                    <strong>
-                        Cajun & Culture
-                    </strong>
-
-                    <span>
-                        Swamp Tours
-                    </span>
-
-                </div>
-
-            </a>
+        </a>
 
 
-
-            <nav
-                class="desktop-nav"
-                aria-label="Main navigation"
-            >
-
-                <a href="index.html#experience">
-                    Experience
-                </a>
-
-                <a href="index.html#tours">
-                    Tours
-                </a>
-
-                <a href="index.html#gallery">
-                    Gallery
-                </a>
-
-                <a href="index.html#guide">
-                    Meet Your Guide
-                </a>
-
-                <a href="index.html#faq">
-                    FAQ
-                </a>
-
-            </nav>
-
-
-
-            <a
-                class="nav-book-button"
-                href="tel:+12254363653"
-            >
-                Call Us
-            </a>
-
-
-
-            <button
-                class="menu-button"
-                id="menuButton"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-                aria-controls="mobileMenu"
-            >
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
-
-        </div>
-
-
-
-        <div
-            class="mobile-menu"
-            id="mobileMenu"
+        <nav
+            class="menu"
+            aria-label="Main"
         >
 
             <a href="index.html">
                 Home
             </a>
 
-            <a href="index.html#experience">
-                Experience
+            <a href="index.html#bayou">
+                The Bayou
             </a>
 
             <a href="index.html#tours">
@@ -759,562 +811,387 @@
             </a>
 
             <a href="index.html#gallery">
-                Gallery
+                Pictures
             </a>
 
-            <a href="index.html#guide">
-                Meet Your Guide
+            <a href="index.html#questions">
+                Questions
             </a>
 
-            <a href="index.html#faq">
-                FAQ
+            <a href="tel:+12254363653">
+                (225) 436-3653
             </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- ===================== PAGE HEADING ===================== -->
+
+<div class="page-head">
+
+    <div class="wrap">
+
+        <h1>
+            Give us a holler.
+        </h1>
+
+        <p>
+            Calling is the quickest way to get an answer.
+            Tell us how many folks you've got and when you'd
+            like to come out, and we'll find you a spot on the boat.
+        </p>
+
+    </div>
+
+</div>
+
+<div class="band"></div>
+
+
+
+<!-- ===================== CONTACT ===================== -->
+
+<main class="wrap">
+
+    <div class="contact-grid">
+
+
+        <!-- PHONE / TEXT / EMAIL -->
+
+        <section>
 
 
             <a
-                class="mobile-book-button"
+                class="call-block"
                 href="tel:+12254363653"
             >
-                Call (225) 436-3653
+
+                <span>
+                    Call us
+                </span>
+
+                <span class="number">
+                    (225) 436-3653
+                </span>
+
+                <span>
+                    Tap to call from your phone
+                </span>
+
             </a>
 
 
-        </div>
 
+            <a
+                class="text-block"
+                href="sms:+12254363653"
+            >
 
-    </header>
-
-
-
-    <!-- =========================
-         CONTACT PAGE
-    ========================== -->
-
-    <main class="contact-page">
-
-
-        <div class="contact-shell">
-
-
-            <!-- LEFT SIDE -->
-
-            <section class="contact-intro">
-
-
-                <span class="contact-kicker">
-                    Let's hit the water
+                <span>
+                    Rather send a text?
                 </span>
 
-
-                <h1>
-
-                    Ready for the
-
-                    <span>
-                        bayou?
-                    </span>
-
-                </h1>
-
-
-                <p>
-
-                    Ready to plan a swamp tour or just have a question?
-                    Give Cajun & Culture a call, send us a text, or fill
-                    out the tour request form. We'll help you with
-                    availability, tour details, and anything you need
-                    before heading out on the water.
-
-                </p>
-
-
-
-                <!-- CALL -->
-
-                <a
-                    class="call-card"
-                    href="tel:+12254363653"
-                >
-
-                    <div class="call-icon">
-                        ☎
-                    </div>
-
-
-                    <div>
-
-                        <small>
-                            Call Cajun & Culture
-                        </small>
-
-                        <strong>
-                            (225) 436-3653
-                        </strong>
-
-                        <span class="call-note">
-                            Tap here to call
-                        </span>
-
-                    </div>
-
-                </a>
-
-
-
-                <!-- TEXT -->
-
-                <a
-                    class="text-link-card"
-                    href="sms:+12254363653"
-                >
-
-                    <span>
-                        Prefer to text?
-                    </span>
-
-                    <span>
-                        Send a Text →
-                    </span>
-
-                </a>
-
-
-
-                <!-- EMAIL -->
-
-                <a
-                    class="direct-email-card"
-                    href="mailto:mdupre3751@gmail.com"
-                >
-
-                    <small>
-                        Email
-                    </small>
-
-                    <strong>
-                        mdupre3751@gmail.com
-                    </strong>
-
-                </a>
-
-
-
-                <a
-                    class="back-home"
-                    href="index.html"
-                >
-                    ← Back to Cajun & Culture
-                </a>
-
-
-            </section>
-
-
-
-            <!-- =========================
-                 BASIN TOUR REQUEST FORM
-            ========================== -->
-
-            <section class="contact-form-card">
-
-
-                <span class="form-kicker">
-                    Tour request
+                <span>
+                    Text us
                 </span>
 
+            </a>
+
+
+
+            <div class="hours">
 
                 <h2>
-                    Tell us about your trip.
+                    A few notes
                 </h2>
 
-
                 <p>
-
-                    Send us a few details below and we'll
-                    get back with you about your swamp tour.
-
+                    If we're out on the water we'll miss your call.
+                    Leave a message or send a text and we'll get
+                    right back to you.
                 </p>
 
+                <p>
+                    Email works too:
+                    <a href="mailto:mdupre3751@gmail.com">
+                        mdupre3751@gmail.com
+                    </a>
+                </p>
 
+                <p>
+                    For private trips, the more notice you can give us,
+                    the better the odds the boat's open.
+                </p>
 
-                <form
-                    class="contact-form"
-                    action="https://usebasin.com/f/6ea07214213e"
-                    method="POST"
-                >
-
-
-                    <!-- NAME + PHONE -->
-
-                    <div class="form-row">
-
-
-                        <label>
-
-                            <span>
-                                Name
-                            </span>
-
-                            <input
-                                type="text"
-                                name="name"
-                                autocomplete="name"
-                                placeholder="Your name"
-                                required
-                            >
-
-                        </label>
+            </div>
 
 
 
-                        <label>
-
-                            <span>
-                                Phone
-                            </span>
-
-                            <input
-                                type="tel"
-                                name="phone"
-                                autocomplete="tel"
-                                placeholder="Your phone number"
-                                required
-                            >
-
-                        </label>
+            <a
+                class="back"
+                href="index.html"
+            >
+                Back to the home page
+            </a>
 
 
-                    </div>
+        </section>
 
 
 
-                    <!-- EMAIL -->
+        <!-- ===================== BASIN FORM ===================== -->
+
+        <section class="form-card">
+
+            <h2>
+                Request a tour
+            </h2>
+
+            <p>
+                Fill this out and send it our way.
+                We'll get your information and reach out about
+                tour availability.
+            </p>
+
+
+            <form
+                action="https://usebasin.com/f/6ea07214213e"
+                method="POST"
+            >
+
+
+                <!-- NAME + PHONE -->
+
+                <div class="two-up">
 
                     <label>
 
                         <span>
-                            Email
+                            Your name
                         </span>
 
                         <input
-                            type="email"
-                            name="email"
-                            autocomplete="email"
-                            placeholder="Your email address"
+                            type="text"
+                            name="name"
+                            autocomplete="name"
                             required
                         >
 
                     </label>
 
 
+                    <label>
 
-                    <!-- DATE + GROUP SIZE -->
+                        <span>
+                            Phone
+                        </span>
 
-                    <div class="form-row">
+                        <input
+                            type="tel"
+                            name="phone"
+                            autocomplete="tel"
+                            required
+                        >
 
+                    </label>
 
-                        <label>
-
-                            <span>
-                                Preferred Tour Date
-                            </span>
-
-                            <input
-                                type="date"
-                                name="preferred_tour_date"
-                            >
-
-                        </label>
+                </div>
 
 
 
-                        <label>
+                <!-- EMAIL -->
 
-                            <span>
-                                Number of Guests
-                            </span>
+                <label>
 
-                            <select
-                                name="number_of_guests"
-                            >
+                    <span>
+                        Email
+                    </span>
 
-                                <option value="">
-                                    Select
-                                </option>
+                    <input
+                        type="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                    >
 
-                                <option value="1">
-                                    1 guest
-                                </option>
-
-                                <option value="2">
-                                    2 guests
-                                </option>
-
-                                <option value="3">
-                                    3 guests
-                                </option>
-
-                                <option value="4">
-                                    4 guests
-                                </option>
-
-                                <option value="5">
-                                    5 guests
-                                </option>
-
-                                <option value="6">
-                                    6 guests
-                                </option>
-
-                                <option value="7">
-                                    7 guests
-                                </option>
-
-                                <option value="8">
-                                    8 guests
-                                </option>
-
-                                <option value="9+">
-                                    9+ guests
-                                </option>
-
-                            </select>
-
-                        </label>
-
-
-                    </div>
+                </label>
 
 
 
-                    <!-- TOUR TYPE -->
+                <!-- DATE + GROUP SIZE -->
+
+                <div class="two-up">
 
                     <label>
 
                         <span>
-                            What are you interested in?
+                            Preferred date
                         </span>
 
-                        <select name="tour_type">
+                        <input
+                            type="date"
+                            name="preferred_date"
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        <span>
+                            Number of people
+                        </span>
+
+                        <select name="group_size">
 
                             <option value="">
-                                Select a tour
+                                Select
                             </option>
 
-                            <option value="Swamp Tour">
-                                Swamp Tour
+                            <option value="1">
+                                1 person
                             </option>
 
-                            <option value="Private Swamp Tour">
-                                Private Swamp Tour
+                            <option value="2">
+                                2 people
                             </option>
 
-                            <option value="Not Sure">
-                                Not sure yet
+                            <option value="3">
+                                3 people
+                            </option>
+
+                            <option value="4">
+                                4 people
+                            </option>
+
+                            <option value="5">
+                                5 people
+                            </option>
+
+                            <option value="6">
+                                6 people
+                            </option>
+
+                            <option value="7">
+                                7 people
+                            </option>
+
+                            <option value="8">
+                                8 people
+                            </option>
+
+                            <option value="9+">
+                                9+ people
                             </option>
 
                         </select>
 
                     </label>
 
-
-
-                    <!-- MESSAGE -->
-
-                    <label>
-
-                        <span>
-                            Message
-                        </span>
-
-                        <textarea
-                            name="message"
-                            placeholder="Tell us about your group, ask a question, or let us know anything else we should know."
-                        ></textarea>
-
-                    </label>
+                </div>
 
 
 
-                    <!-- BASIN SUBJECT -->
+                <!-- MESSAGE -->
 
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="New Cajun & Culture Tour Request"
-                    >
+                <label>
 
+                    <span>
+                        What can we help with?
+                    </span>
 
+                    <textarea
+                        name="message"
+                        placeholder="Tell us anything else about your group, when you'd like to come out, or anything you want to ask."
+                    ></textarea>
 
-                    <!-- SUBMIT -->
-
-                    <button
-                        class="send-button"
-                        type="submit"
-                    >
-                        Send Tour Request →
-                    </button>
+                </label>
 
 
 
-                    <p class="form-note">
+                <!-- SUBJECT FOR BASIN -->
 
-                        Prefer to contact us directly?
-
-                        Call
-
-                        <a href="tel:+12254363653">
-                            (225) 436-3653
-                        </a>
-
-                        or email
-
-                        <a href="mailto:mdupre3751@gmail.com">
-                            mdupre3751@gmail.com
-                        </a>
-
-                    </p>
-
-
-                </form>
-
-
-            </section>
-
-
-        </div>
-
-
-    </main>
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Cajun & Culture Swamp Tour Request"
+                >
 
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+                <!-- SUBMIT -->
 
-    <footer class="site-footer">
+                <button
+                    class="send"
+                    type="submit"
+                >
+                    Send tour request
+                </button>
 
 
-        <div class="footer-bottom">
+
+                <p class="form-note">
+
+                    Your request will be sent directly to
+                    Cajun &amp; Culture.
+
+                    You can also email us at
+
+                    <a href="mailto:mdupre3751@gmail.com">
+                        mdupre3751@gmail.com
+                    </a>.
+
+                </p>
 
 
-            <span>
+            </form>
 
-                ©
+        </section>
 
-                <span id="currentYear">
-                    2026
-                </span>
 
-                Cajun & Culture Swamp Tours
+    </div>
 
+</main>
+
+
+
+<!-- ===================== FOOTER ===================== -->
+
+<footer>
+
+    <div class="wrap">
+
+        <span>
+            &copy;
+            <span id="year">
+                2026
             </span>
+            Cajun &amp; Culture Swamp Tours
+        </span>
 
+        <span>
+            South Louisiana
+        </span>
 
-            <span>
-                Proudly rooted in South Louisiana
-            </span>
+    </div>
 
-
-        </div>
-
-
-    </footer>
-
-
-
-    <!-- =========================
-         PAGE JAVASCRIPT
-    ========================== -->
-
-    <script>
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
-
-
-                /* CURRENT YEAR */
-
-                const year =
-                    document.getElementById(
-                        "currentYear"
-                    );
-
-
-                if (year) {
-
-                    year.textContent =
-                        new Date().getFullYear();
-
-                }
+</footer>
 
 
 
-                /* MOBILE MENU */
+<!-- ===================== JAVASCRIPT ===================== -->
 
-                const menuButton =
-                    document.getElementById(
-                        "menuButton"
-                    );
+<script>
 
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
 
-                const mobileMenu =
-                    document.getElementById(
-                        "mobileMenu"
-                    );
-
-
-                if (
-                    menuButton &&
-                    mobileMenu
-                ) {
-
-                    menuButton.addEventListener(
-                        "click",
-                        function () {
-
-
-                            const open =
-                                mobileMenu
-                                    .classList
-                                    .contains("open");
-
-
-                            mobileMenu
-                                .classList
-                                .toggle(
-                                    "open",
-                                    !open
-                                );
-
-
-                            menuButton
-                                .classList
-                                .toggle(
-                                    "active",
-                                    !open
-                                );
-
-
-                            menuButton
-                                .setAttribute(
-                                    "aria-expanded",
-                                    String(!open)
-                                );
-
-
-                        }
-                    );
-
-                }
-
-
-            }
-        );
-
-    </script>
+</script>
 
 
 </body>
